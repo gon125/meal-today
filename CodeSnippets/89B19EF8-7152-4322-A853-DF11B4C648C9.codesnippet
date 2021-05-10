@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>algo heap</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>struct Heap&lt;Element&gt; {
+    private let isInIncreasingOrder: (Element, Element) -&gt; Bool
+    private var elements: [Element]
+    var isEmpty: Bool { elements.isEmpty }
+    
+    init(_ elements: [Element], by isInIncreasingOrder: @escaping (Element, Element) -&gt; Bool) {
+        self.elements = elements
+        self.isInIncreasingOrder = isInIncreasingOrder
+        makeHeap()
+    }
+    
+    mutating func enqueue(_ element: Element) {
+        elements.append(element)
+        bubbleUpElement(at: elements.count-1)
+    }
+    
+    mutating func dequeue() -&gt; Element? {
+        guard !isEmpty else { return nil }
+        elements.swapAt(0, elements.count-1)
+        let dequeuedElement = elements.removeLast()
+        if !isEmpty { sinkDownElement(at: 0) }
+        return dequeuedElement
+    }
+    
+    
+    mutating private func makeHeap() {
+        (0..&lt;elements.count/2).reversed().forEach { sinkDownElement(at: $0) }
+    }
+    
+    mutating private func bubbleUpElement(at index: Int) {
+        guard !index.isRoot else { return }
+        let parentIndex = index.parent
+        guard isInIncreasingOrder(elements[index], elements[parentIndex]) else { return }
+        elements.swapAt(index, parentIndex)
+        bubbleUpElement(at: parentIndex)
+    }
+    
+    mutating private func sinkDownElement(at index: Int) {
+        let chosenIndex = highestPriorityUnder(parentIndex: index)
+        guard chosenIndex != index else { return }
+        elements.swapAt(index, chosenIndex)
+        sinkDownElement(at: chosenIndex)
+    }
+    
+    private func highestPriorityUnder(parentIndex: Int) -&gt; Int {
+        guard let childIndex =
+                [parentIndex.leftChild, parentIndex.rightChild]
+                .filter( { $0 &lt; elements.count } )
+                .min(by: { isInIncreasingOrder( elements[$0], elements[$1]) })
+        else { return parentIndex }
+        return isInIncreasingOrder(elements[parentIndex], elements[childIndex]) ? parentIndex : childIndex
+    }
+
+}
+
+extension Int {
+    var isRoot: Bool { self == 0 }
+    var parent: Int { (self-1)/2 }
+    var leftChild: Int { 2*self + 1 }
+    var rightChild: Int { 2*self + 2 }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>89B19EF8-7152-4322-A853-DF11B4C648C9</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Heap</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
