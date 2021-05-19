@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F35DAA252653E20B00033788 /* SelectionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35DAA242653E20B00033788 /* SelectionUseCase.swift */; };
+		F35DAA272653E42C00033788 /* SelectionModels+States+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35DAA262653E42C00033788 /* SelectionModels+States+Errors.swift */; };
+		F3C87B662652926A0038C92A /* MealTodayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B652652926A0038C92A /* MealTodayApp.swift */; };
+		F3C87B682652926A0038C92A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B672652926A0038C92A /* AppView.swift */; };
+		F3C87B6A2652926B0038C92A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3C87B692652926B0038C92A /* Assets.xcassets */; };
+		F3C87B6D2652926B0038C92A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3C87B6C2652926B0038C92A /* Preview Assets.xcassets */; };
+		F3C87B7C2652955F0038C92A /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B7B2652955F0038C92A /* SelectionView.swift */; };
+		F3C87B7E265295850038C92A /* ShortcutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B7D265295850038C92A /* ShortcutView.swift */; };
+		F3C87B802652959E0038C92A /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B7F2652959E0038C92A /* ResultView.swift */; };
+		F3C87B82265295C60038C92A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B81265295C60038C92A /* MainView.swift */; };
+		F3C87B84265296580038C92A /* SaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B83265296580038C92A /* SaveView.swift */; };
+		F3C87B9E26529A300038C92A /* RestaurantModels+States+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B9226529A300038C92A /* RestaurantModels+States+Errors.swift */; };
+		F3C87BA126529A300038C92A /* RestaurantUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B9726529A300038C92A /* RestaurantUseCase.swift */; };
+		F3C87BA426529AEC0038C92A /* ShortcutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87BA326529AEC0038C92A /* ShortcutUseCase.swift */; };
+		F3C87BA626529B3B0038C92A /* ShortcutModels+States+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87BA526529B3B0038C92A /* ShortcutModels+States+Errors.swift */; };
+		F3C87BB32654D2550038C92A /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87BAE2654D2550038C92A /* State.swift */; };
+		F3C87BB42654D2550038C92A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87BAF2654D2550038C92A /* Model.swift */; };
+		F3C87BB52654D2550038C92A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87BB02654D2550038C92A /* Location.swift */; };
+		F3C87BB62654D2550038C92A /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87BB12654D2550038C92A /* Error.swift */; };
+		F3C87BB72654D2550038C92A /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87BB22654D2550038C92A /* UseCase.swift */; };
+		F3C87BB92654D27B0038C92A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87BB82654D27B0038C92A /* AppState.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F35DAA242653E20B00033788 /* SelectionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionUseCase.swift; sourceTree = "<group>"; };
+		F35DAA262653E42C00033788 /* SelectionModels+States+Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectionModels+States+Errors.swift"; sourceTree = "<group>"; };
+		F3C87B622652926A0038C92A /* MealToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3C87B652652926A0038C92A /* MealTodayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTodayApp.swift; sourceTree = "<group>"; };
+		F3C87B672652926A0038C92A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		F3C87B692652926B0038C92A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F3C87B6C2652926B0038C92A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F3C87B6E2652926B0038C92A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3C87B7B2652955F0038C92A /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
+		F3C87B7D265295850038C92A /* ShortcutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutView.swift; sourceTree = "<group>"; };
+		F3C87B7F2652959E0038C92A /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		F3C87B81265295C60038C92A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F3C87B83265296580038C92A /* SaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveView.swift; sourceTree = "<group>"; };
+		F3C87B9226529A300038C92A /* RestaurantModels+States+Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RestaurantModels+States+Errors.swift"; sourceTree = "<group>"; };
+		F3C87B9726529A300038C92A /* RestaurantUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantUseCase.swift; sourceTree = "<group>"; };
+		F3C87BA326529AEC0038C92A /* ShortcutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutUseCase.swift; sourceTree = "<group>"; };
+		F3C87BA526529B3B0038C92A /* ShortcutModels+States+Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShortcutModels+States+Errors.swift"; sourceTree = "<group>"; };
+		F3C87BAE2654D2550038C92A /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		F3C87BAF2654D2550038C92A /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		F3C87BB02654D2550038C92A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		F3C87BB12654D2550038C92A /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		F3C87BB22654D2550038C92A /* UseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		F3C87BB82654D27B0038C92A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F3C87B5F2652926A0038C92A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F3C87B592652926A0038C92A = {
+			isa = PBXGroup;
+			children = (
+				F3C87B642652926A0038C92A /* MealToday */,
+				F3C87B632652926A0038C92A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F3C87B632652926A0038C92A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3C87B622652926A0038C92A /* MealToday.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F3C87B642652926A0038C92A /* MealToday */ = {
+			isa = PBXGroup;
+			children = (
+				F3C87BA9265399C60038C92A /* Config */,
+				F3C87B782652951E0038C92A /* App */,
+				F3C87B76265294C70038C92A /* DM */,
+				F3C87B75265294C40038C92A /* UI */,
+				F3C87B74265294BB0038C92A /* Problem Domain */,
+				F3C87B692652926B0038C92A /* Assets.xcassets */,
+				F3C87B6E2652926B0038C92A /* Info.plist */,
+				F3C87B6B2652926B0038C92A /* Preview Content */,
+			);
+			path = MealToday;
+			sourceTree = "<group>";
+		};
+		F3C87B6B2652926B0038C92A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F3C87B6C2652926B0038C92A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F3C87B74265294BB0038C92A /* Problem Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F3C87BAD2654D2400038C92A /* Protocols */,
+				F3C87B9126529A300038C92A /* Models+States+Errors */,
+				F3C87B9626529A300038C92A /* UseCases */,
+			);
+			path = "Problem Domain";
+			sourceTree = "<group>";
+		};
+		F3C87B75265294C40038C92A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F3C87B7B2652955F0038C92A /* SelectionView.swift */,
+				F3C87B7D265295850038C92A /* ShortcutView.swift */,
+				F3C87B7F2652959E0038C92A /* ResultView.swift */,
+				F3C87B81265295C60038C92A /* MainView.swift */,
+				F3C87B83265296580038C92A /* SaveView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		F3C87B76265294C70038C92A /* DM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DM;
+			sourceTree = "<group>";
+		};
+		F3C87B782652951E0038C92A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F3C87B652652926A0038C92A /* MealTodayApp.swift */,
+				F3C87B672652926A0038C92A /* AppView.swift */,
+				F3C87BB82654D27B0038C92A /* AppState.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F3C87B9126529A300038C92A /* Models+States+Errors */ = {
+			isa = PBXGroup;
+			children = (
+				F3C87B9226529A300038C92A /* RestaurantModels+States+Errors.swift */,
+				F35DAA262653E42C00033788 /* SelectionModels+States+Errors.swift */,
+				F3C87BA526529B3B0038C92A /* ShortcutModels+States+Errors.swift */,
+			);
+			path = "Models+States+Errors";
+			sourceTree = "<group>";
+		};
+		F3C87B9626529A300038C92A /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				F3C87B9726529A300038C92A /* RestaurantUseCase.swift */,
+				F3C87BA326529AEC0038C92A /* ShortcutUseCase.swift */,
+				F35DAA242653E20B00033788 /* SelectionUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		F3C87BA9265399C60038C92A /* Config */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		F3C87BAD2654D2400038C92A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F3C87BB12654D2550038C92A /* Error.swift */,
+				F3C87BB02654D2550038C92A /* Location.swift */,
+				F3C87BAF2654D2550038C92A /* Model.swift */,
+				F3C87BAE2654D2550038C92A /* State.swift */,
+				F3C87BB22654D2550038C92A /* UseCase.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F3C87B612652926A0038C92A /* MealToday */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3C87B712652926B0038C92A /* Build configuration list for PBXNativeTarget "MealToday" */;
+			buildPhases = (
+				F3C87BAC2654CAC60038C92A /* ShellScript */,
+				F3C87B5E2652926A0038C92A /* Sources */,
+				F3C87B5F2652926A0038C92A /* Frameworks */,
+				F3C87B602652926A0038C92A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MealToday;
+			productName = MealToday;
+			productReference = F3C87B622652926A0038C92A /* MealToday.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F3C87B5A2652926A0038C92A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					F3C87B612652926A0038C92A = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = F3C87B5D2652926A0038C92A /* Build configuration list for PBXProject "MealToday" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F3C87B592652926A0038C92A;
+			productRefGroup = F3C87B632652926A0038C92A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F3C87B612652926A0038C92A /* MealToday */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F3C87B602652926A0038C92A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3C87B6D2652926B0038C92A /* Preview Assets.xcassets in Resources */,
+				F3C87B6A2652926B0038C92A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F3C87BAC2654CAC60038C92A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n      swiftlint autocorrect && swiftlint --config \"${SRCROOT}/.swiftlint.yml\"\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F3C87B5E2652926A0038C92A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3C87BB42654D2550038C92A /* Model.swift in Sources */,
+				F3C87B7E265295850038C92A /* ShortcutView.swift in Sources */,
+				F3C87BB92654D27B0038C92A /* AppState.swift in Sources */,
+				F3C87BB52654D2550038C92A /* Location.swift in Sources */,
+				F3C87BA626529B3B0038C92A /* ShortcutModels+States+Errors.swift in Sources */,
+				F3C87B82265295C60038C92A /* MainView.swift in Sources */,
+				F3C87B9E26529A300038C92A /* RestaurantModels+States+Errors.swift in Sources */,
+				F3C87BA126529A300038C92A /* RestaurantUseCase.swift in Sources */,
+				F3C87BB32654D2550038C92A /* State.swift in Sources */,
+				F3C87B682652926A0038C92A /* AppView.swift in Sources */,
+				F3C87BB62654D2550038C92A /* Error.swift in Sources */,
+				F3C87B84265296580038C92A /* SaveView.swift in Sources */,
+				F35DAA272653E42C00033788 /* SelectionModels+States+Errors.swift in Sources */,
+				F35DAA252653E20B00033788 /* SelectionUseCase.swift in Sources */,
+				F3C87B662652926A0038C92A /* MealTodayApp.swift in Sources */,
+				F3C87B7C2652955F0038C92A /* SelectionView.swift in Sources */,
+				F3C87BB72654D2550038C92A /* UseCase.swift in Sources */,
+				F3C87B802652959E0038C92A /* ResultView.swift in Sources */,
+				F3C87BA426529AEC0038C92A /* ShortcutUseCase.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F3C87B6F2652926B0038C92A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F3C87B702652926B0038C92A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F3C87B722652926B0038C92A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MealToday/Preview Content\"";
+				DEVELOPMENT_TEAM = 24523H34CV;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MealToday/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.gon125.MealToday;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F3C87B732652926B0038C92A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MealToday/Preview Content\"";
+				DEVELOPMENT_TEAM = 24523H34CV;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MealToday/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.gon125.MealToday;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F3C87B5D2652926A0038C92A /* Build configuration list for PBXProject "MealToday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3C87B6F2652926B0038C92A /* Debug */,
+				F3C87B702652926B0038C92A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3C87B712652926B0038C92A /* Build configuration list for PBXNativeTarget "MealToday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3C87B722652926B0038C92A /* Debug */,
+				F3C87B732652926B0038C92A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F3C87B5A2652926A0038C92A /* Project object */;
+}
