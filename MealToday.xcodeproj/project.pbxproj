@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A84D90A265BF30F007CFF9A /* ShortcutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A84D909265BF30F007CFF9A /* ShortcutCard.swift */; };
+		4A84D90C265BF324007CFF9A /* ShortcurCardWide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A84D90B265BF324007CFF9A /* ShortcurCardWide.swift */; };
 		F35DAA252653E20B00033788 /* SelectionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35DAA242653E20B00033788 /* SelectionUseCase.swift */; };
 		F35DAA272653E42C00033788 /* SelectionModels+States+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35DAA262653E42C00033788 /* SelectionModels+States+Errors.swift */; };
 		F3C87B662652926A0038C92A /* MealTodayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B652652926A0038C92A /* MealTodayApp.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A84D909265BF30F007CFF9A /* ShortcutCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutCard.swift; sourceTree = "<group>"; };
+		4A84D90B265BF324007CFF9A /* ShortcurCardWide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcurCardWide.swift; sourceTree = "<group>"; };
 		F35DAA242653E20B00033788 /* SelectionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionUseCase.swift; sourceTree = "<group>"; };
 		F35DAA262653E42C00033788 /* SelectionModels+States+Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectionModels+States+Errors.swift"; sourceTree = "<group>"; };
 		F3C87B622652926A0038C92A /* MealToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				F3C87B7B2652955F0038C92A /* SelectionView.swift */,
+				4A84D909265BF30F007CFF9A /* ShortcutCard.swift */,
+				4A84D90B265BF324007CFF9A /* ShortcurCardWide.swift */,
 				F3C87B7D265295850038C92A /* ShortcutView.swift */,
 				F3C87B7F2652959E0038C92A /* ResultView.swift */,
 				F3C87B81265295C60038C92A /* MainView.swift */,
@@ -280,11 +286,13 @@
 				F3C87BB52654D2550038C92A /* Location.swift in Sources */,
 				F3C87BA626529B3B0038C92A /* ShortcutModels+States+Errors.swift in Sources */,
 				F3C87B82265295C60038C92A /* MainView.swift in Sources */,
+				4A84D90C265BF324007CFF9A /* ShortcurCardWide.swift in Sources */,
 				F3C87B9E26529A300038C92A /* RestaurantModels+States+Errors.swift in Sources */,
 				F3C87BA126529A300038C92A /* RestaurantUseCase.swift in Sources */,
 				F3C87BB32654D2550038C92A /* State.swift in Sources */,
 				F3C87B682652926A0038C92A /* AppView.swift in Sources */,
 				F3C87BB62654D2550038C92A /* Error.swift in Sources */,
+				4A84D90A265BF30F007CFF9A /* ShortcutCard.swift in Sources */,
 				F3C87B84265296580038C92A /* SaveView.swift in Sources */,
 				F35DAA272653E42C00033788 /* SelectionModels+States+Errors.swift in Sources */,
 				F35DAA252653E20B00033788 /* SelectionUseCase.swift in Sources */,
