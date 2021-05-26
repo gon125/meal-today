@@ -10,10 +10,13 @@
 		4A84D90A265BF30F007CFF9A /* ShortcutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A84D909265BF30F007CFF9A /* ShortcutCard.swift */; };
 		4A84D90C265BF324007CFF9A /* ShortcurCardWide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A84D90B265BF324007CFF9A /* ShortcurCardWide.swift */; };
 		F3505410265E23B00006861C /* foods.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F350540F265E239C0006861C /* foods.sqlite */; };
+		F3505415265E28B90006861C /* ShortcutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3505414265E28B90006861C /* ShortcutViewModel.swift */; };
+		F3505417265E38CF0006861C /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3505416265E38CF0006861C /* DIContainer.swift */; };
+		F350541A265E71860006861C /* CodableColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3505419265E71860006861C /* CodableColor.swift */; };
+		F350541C265E727C0006861C /* SelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F350541B265E727C0006861C /* SelectionViewModel.swift */; };
+		F350541E265E8ADC0006861C /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F350541D265E8ADC0006861C /* ResultViewModel.swift */; };
 		F35DAA252653E20B00033788 /* SelectionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35DAA242653E20B00033788 /* SelectionUseCase.swift */; };
 		F35DAA272653E42C00033788 /* SelectionModels+States+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35DAA262653E42C00033788 /* SelectionModels+States+Errors.swift */; };
-		F3926AF2265BD40E00F305FA /* FoodRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3926AF1265BD40E00F305FA /* FoodRepository.swift */; };
-		F3926AF5265BD54A00F305FA /* FoodDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3926AF4265BD54A00F305FA /* FoodDTO.swift */; };
 		F3C87B662652926A0038C92A /* MealTodayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B652652926A0038C92A /* MealTodayApp.swift */; };
 		F3C87B682652926A0038C92A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B672652926A0038C92A /* AppView.swift */; };
 		F3C87B6A2652926B0038C92A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3C87B692652926B0038C92A /* Assets.xcassets */; };
@@ -39,10 +42,13 @@
 		4A84D909265BF30F007CFF9A /* ShortcutCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutCard.swift; sourceTree = "<group>"; };
 		4A84D90B265BF324007CFF9A /* ShortcurCardWide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcurCardWide.swift; sourceTree = "<group>"; };
 		F350540F265E239C0006861C /* foods.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = foods.sqlite; sourceTree = "<group>"; };
+		F3505414265E28B90006861C /* ShortcutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutViewModel.swift; sourceTree = "<group>"; };
+		F3505416265E38CF0006861C /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		F3505419265E71860006861C /* CodableColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableColor.swift; sourceTree = "<group>"; };
+		F350541B265E727C0006861C /* SelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewModel.swift; sourceTree = "<group>"; };
+		F350541D265E8ADC0006861C /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		F35DAA242653E20B00033788 /* SelectionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionUseCase.swift; sourceTree = "<group>"; };
 		F35DAA262653E42C00033788 /* SelectionModels+States+Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectionModels+States+Errors.swift"; sourceTree = "<group>"; };
-		F3926AF1265BD40E00F305FA /* FoodRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodRepository.swift; sourceTree = "<group>"; };
-		F3926AF4265BD54A00F305FA /* FoodDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDTO.swift; sourceTree = "<group>"; };
 		F3C87B622652926A0038C92A /* MealToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3C87B652652926A0038C92A /* MealTodayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTodayApp.swift; sourceTree = "<group>"; };
 		F3C87B672652926A0038C92A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -85,10 +91,27 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		F3505413265E28AB0006861C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F3505414265E28B90006861C /* ShortcutViewModel.swift */,
+				F350541B265E727C0006861C /* SelectionViewModel.swift */,
+				F350541D265E8ADC0006861C /* ResultViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F3505418265E71750006861C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F3505419265E71860006861C /* CodableColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F3926AF0265BD3F900F305FA /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				F3926AF1265BD40E00F305FA /* FoodRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -96,7 +119,6 @@
 		F3926AF3265BD54100F305FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F3926AF4265BD54A00F305FA /* FoodDTO.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -122,9 +144,9 @@
 			children = (
 				F3C87BA9265399C60038C92A /* Config */,
 				F3C87B782652951E0038C92A /* App */,
+				F3C87B74265294BB0038C92A /* Problem Domain */,
 				F3C87B76265294C70038C92A /* DM */,
 				F3C87B75265294C40038C92A /* UI */,
-				F3C87B74265294BB0038C92A /* Problem Domain */,
 				F350540E265E23630006861C /* Resources */,
 				F3C87B692652926B0038C92A /* Assets.xcassets */,
 				F3C87B6E2652926B0038C92A /* Info.plist */,
@@ -154,6 +176,8 @@
 		F3C87B75265294C40038C92A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				F3505418265E71750006861C /* Extensions */,
+				F3505413265E28AB0006861C /* ViewModels */,
 				F3C87B7B2652955F0038C92A /* SelectionView.swift */,
 				4A84D909265BF30F007CFF9A /* ShortcutCard.swift */,
 				4A84D90B265BF324007CFF9A /* ShortcurCardWide.swift */,
@@ -180,6 +204,7 @@
 				F3C87B652652926A0038C92A /* MealTodayApp.swift */,
 				F3C87B672652926A0038C92A /* AppView.swift */,
 				F3C87BB82654D27B0038C92A /* AppState.swift */,
+				F3505416265E38CF0006861C /* DIContainer.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -188,8 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				F3C87B9226529A300038C92A /* RestaurantModels+States+Errors.swift */,
-				F35DAA262653E42C00033788 /* SelectionModels+States+Errors.swift */,
 				F3C87BA526529B3B0038C92A /* ShortcutModels+States+Errors.swift */,
+				F35DAA262653E42C00033788 /* SelectionModels+States+Errors.swift */,
 			);
 			path = "Models+States+Errors";
 			sourceTree = "<group>";
@@ -315,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3C87BB42654D2550038C92A /* Model.swift in Sources */,
+				F3505417265E38CF0006861C /* DIContainer.swift in Sources */,
 				F3C87B7E265295850038C92A /* ShortcutView.swift in Sources */,
 				F3C87BB92654D27B0038C92A /* AppState.swift in Sources */,
 				F3C87BB52654D2550038C92A /* Location.swift in Sources */,
@@ -324,8 +350,10 @@
 				F3C87B9E26529A300038C92A /* RestaurantModels+States+Errors.swift in Sources */,
 				F3C87BA126529A300038C92A /* RestaurantUseCase.swift in Sources */,
 				F3C87BB32654D2550038C92A /* State.swift in Sources */,
+				F3505415265E28B90006861C /* ShortcutViewModel.swift in Sources */,
 				F3C87B682652926A0038C92A /* AppView.swift in Sources */,
 				F3C87BB62654D2550038C92A /* Error.swift in Sources */,
+				F350541A265E71860006861C /* CodableColor.swift in Sources */,
 				4A84D90A265BF30F007CFF9A /* ShortcutCard.swift in Sources */,
 				F3C87B84265296580038C92A /* SaveView.swift in Sources */,
 				F35DAA272653E42C00033788 /* SelectionModels+States+Errors.swift in Sources */,
@@ -334,9 +362,9 @@
 				F3C87B7C2652955F0038C92A /* SelectionView.swift in Sources */,
 				F3C87BB72654D2550038C92A /* UseCase.swift in Sources */,
 				F3C87B802652959E0038C92A /* ResultView.swift in Sources */,
+				F350541C265E727C0006861C /* SelectionViewModel.swift in Sources */,
 				F3C87BA426529AEC0038C92A /* ShortcutUseCase.swift in Sources */,
-				F3926AF5265BD54A00F305FA /* FoodDTO.swift in Sources */,
-				F3926AF2265BD40E00F305FA /* FoodRepository.swift in Sources */,
+				F350541E265E8ADC0006861C /* ResultViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
