@@ -9,8 +9,36 @@ import SwiftUI
 
 struct SelectionView: View {
     @EnvironmentObject var appState: AppState
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("매운 음식")
+                .font(.system(size: 40))
+                .fontWeight(.black)
+            HStack {
+                ZStack {
+                    Circle()
+                        .fill(Color.blue)
+                        .frame(width: 130, height: 130)
+                    Text("YES")
+                        .font(.system(size: 30))
+                        .foregroundColor(Color.white)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                }
+                Divider().frame(height: 180).padding(.horizontal, 20)
+
+                ZStack {
+                    Circle()
+                        .fill(Color.orange)
+                        .frame(width: 130, height: 130)
+                    Text("NO")
+                        .font(.system(size: 30))
+                        .foregroundColor(Color.white)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                }
+
+            }
+        }
     }
 }
 

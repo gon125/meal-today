@@ -10,7 +10,61 @@ import SwiftUI
 struct ResultView: View {
     @EnvironmentObject var appState: AppState
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 10) {
+
+            ZStack {
+                Circle()
+                    .fill(Color.yellow)
+                    .frame(width: 300, height: 300, alignment: .center/*@END_MENU_TOKEN@*/)
+                    .shadow(radius: 10/*@END_MENU_TOKEN@*/)
+                VStack(spacing: 0) {
+                    Spacer().frame(height: 0)
+                    Text("오늘 추천 메뉴는")
+                        .font(.system(size: 35))
+                        .fontWeight(.medium)
+                    Text("짜장면")
+                        .font(.system(size: 60))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.white)
+                        .shadow(radius: 10/*@END_MENU_TOKEN@*/)
+
+                }
+            }
+            .padding(.bottom, 30)
+            Text("메뉴가 마음에 드시나요?")
+                .font(.title)
+                .padding(.bottom, 5)
+            HStack {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 12)
+                        .frame(width: 120, height: 50)
+                        .foregroundColor(Color.blue)
+                        .padding(.horizontal, 5)
+                    Text("저장하기")
+                        .font(.system(size: 25))
+                        .foregroundColor(Color.white)
+                }
+                ZStack {
+                    RoundedRectangle(cornerRadius: 12)
+                        .frame(width: 120, height: 50)
+                        .foregroundColor(Color.gray)
+                        .padding(.horizontal, 5)
+                    Text("다시뽑기")
+                        .font(.system(size: 25))
+                }
+            }
+            ZStack {
+                RoundedRectangle(cornerRadius: 15)
+//                            .stroke(lineWidth: 2)
+                    .frame(width: 140, height: 60)
+                    .foregroundColor(Color.white)
+                    .shadow(radius: 5)
+                Text("위치 찾기")
+                    .font(.system(size: 30))
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(Color.black)
+            }.padding(.top, 8)
+        }
     }
 }
 
