@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ResultView: View {
-    @EnvironmentObject var appState: AppState
+    @ObservedObject var viewModel: ViewModel = ViewModel()
     var body: some View {
         VStack(spacing: 10) {
 
@@ -22,7 +22,7 @@ struct ResultView: View {
                     Text("오늘 추천 메뉴는")
                         .font(.system(size: 35))
                         .fontWeight(.medium)
-                    Text("짜장면")
+                    Text(viewModel.foodName)
                         .font(.system(size: 60))
                         .fontWeight(.bold)
                         .foregroundColor(Color.white)
@@ -35,23 +35,28 @@ struct ResultView: View {
                 .font(.title)
                 .padding(.bottom, 5)
             HStack {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 12)
-                        .frame(width: 120, height: 50)
-                        .foregroundColor(Color.blue)
-                        .padding(.horizontal, 5)
-                    Text("저장하기")
-                        .font(.system(size: 25))
-                        .foregroundColor(Color.white)
-                }
-                ZStack {
-                    RoundedRectangle(cornerRadius: 12)
-                        .frame(width: 120, height: 50)
-                        .foregroundColor(Color.gray)
-                        .padding(.horizontal, 5)
-                    Text("다시뽑기")
-                        .font(.system(size: 25))
-                }
+                Button(action: { }, label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 12)
+                            .frame(width: 120, height: 50)
+                            .foregroundColor(Color.blue)
+                            .padding(.horizontal, 5)
+                        Text("저장하기")
+                            .font(.system(size: 25))
+                            .foregroundColor(Color.white)
+                    }
+                })
+                Button(action: { viewModel.retry() }, label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 12)
+                            .frame(width: 120, height: 50)
+                            .foregroundColor(Color.gray)
+                            .padding(.horizontal, 5)
+                        Text("다시뽑기")
+                            .font(.system(size: 25))
+                    }
+                })
+
             }
             ZStack {
                 RoundedRectangle(cornerRadius: 15)
