@@ -7,12 +7,12 @@
 import Combine
 
 final class AppState: ObservableObject {
-    var viewRouting: ViewRouting = .shortcut
-}
+    @Published var viewRouting: ViewRouting = .shortcut
 
-enum ViewRouting {
-    case shortcut
-    case selecting
-    case selectionFinished
-    case resultView
+    enum ViewRouting {
+        case shortcut
+        case selecting
+        case selectionFinished
+        case resultView
+    }
 }
