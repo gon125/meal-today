@@ -9,7 +9,7 @@ import SwiftUI
 
 // Images --> SF Symbols
 struct ShortcutView: View {
-    @EnvironmentObject var appState: AppState
+    @ObservedObject var viewModel: ViewModel = ViewModel()
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             VStack(alignment: .leading, spacing: 0) {
@@ -28,6 +28,12 @@ struct ShortcutView: View {
 
                 ScrollView {
                     VStack {
+                        ForEach(viewModel.shortcuts) { shortcut in
+                            Button(action: { viewModel.routeToResultView(with: shortcut) }, label: {
+                                ShortcutCard(icon: shortcut.icon, title: shortcut.name, detail: shortcut.description, bgColor: shortcut.color.color)
+                            })
+
+                        }
                         ShortcutCardWide()
                         ShortcutCard(icon: "moon.fill", title: "출출한 밤엔 !", detail: "치킨, 피자, 라면, 떡볶이, ... ", bgColor: Color.gray)
                         ShortcutCard(icon: "cloud.rain.fill", title: "비도 오고 그래서", detail: "파전, 칼국수, 수제비 ...", bgColor: Color.blue)
@@ -39,17 +45,19 @@ struct ShortcutView: View {
                     .padding()
                 }
             }
+            Button(action: { viewModel.routeToSelectingView() }, label: {
+                Circle()
+                    .foregroundColor(Color.yellow)
+                    .frame(width: 60, height: 60)
+                    .overlay(
+                        Image(systemName: "plus")
+                            .font(.system(size: 30))
+                            .foregroundColor(.white)
+                    )
+                    .padding(10)
+                    .shadow(radius: 20)
+            })
 
-            Circle()
-                .foregroundColor(Color.yellow)
-                .frame(width: 60, height: 60)
-                .overlay(
-                    Image(systemName: "plus")
-                        .font(.system(size: 30))
-                        .foregroundColor(.white)
-                )
-                .padding(10)
-                .shadow(radius: 20)
         }
     }
 }
