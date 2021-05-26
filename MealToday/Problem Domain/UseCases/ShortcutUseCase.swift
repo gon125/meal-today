@@ -10,10 +10,12 @@ import Combine
 
 protocol ShortcutUseCase {
     func getShortcuts() -> AnyPublisher<[Shortcut], Never>
-    func createShortcut(name: String, selections: Selection)
+    func createShortcut(name: String, selections: Selections)
 }
 
 #if DEBUG
+typealias DefaultShortcutUseCase = StubShortcutUseCase
+
 struct StubShortcutUseCase: ShortcutUseCase {
     func getShortcuts() -> AnyPublisher<[Shortcut], Never> {
         Just(Shortcut.stub).eraseToAnyPublisher()

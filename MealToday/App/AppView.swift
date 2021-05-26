@@ -6,21 +6,29 @@
 //
 
 import SwiftUI
+import Combine
 
 struct AppView: View {
-    @EnvironmentObject var appState: AppState
+    @State private var viewRouting: AppState.ViewRouting = .shortcut
+    @Injected var appState: AppState
+
     var body: some View {
-        switch appState.viewRouting {
-        case .shortcut: ShortcutView()
-        case .selecting: SelectionView()
-        case .selectionFinished: SaveView()
-        case .resultView: ResultView()
-        }
+        Group {
+            switch viewRouting {
+            case .shortcut: ShortcutView()
+            case .selecting: SelectionView()
+            case .selectionFinished: SaveView()
+            case .resultView: ResultView()
+            }
+        }.onReceive(appState.$viewRouting, perform: { viewRouting = $0 })
     }
+
+    // MARK: - Private
+    private var cancelBag = Set<AnyCancellable>()
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        AppView().environmentObject(AppState())
+        AppView()
     }
 }

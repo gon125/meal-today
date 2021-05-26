@@ -9,9 +9,22 @@ import SwiftUI
 
 @main
 struct MealTodayApp: App {
+
+    init() {
+        DIContainer.registerDependencies()
+    }
+
     var body: some Scene {
         WindowGroup {
-            AppView().environmentObject(AppState())
+            AppView()
         }
+    }
+}
+
+extension DIContainer {
+    static func registerDependencies() {
+        DIContainer.shared.register(DefaultShortcutUseCase() as ShortcutUseCase)
+        DIContainer.shared.register(DefaultSelectionUseCase() as SelectionUseCase)
+        DIContainer.shared.register(AppState())
     }
 }
