@@ -5,8 +5,9 @@
 //  Created by Geonhyeong LIm on 2021/05/18.
 //
 
-enum FoodType: String, Hashable, Model, CaseIterable {
+enum FoodType: String, Hashable, Model, CaseIterable, Codable {
 
+    case dessertOrMeal = "디저트 Or 식사"
     // desserts
     case beverage = "음료"
     case bingsu = "빙수"
@@ -28,10 +29,10 @@ enum FoodType: String, Hashable, Model, CaseIterable {
     static let meal: [FoodType] = [.meat, .seafood, .rice, .noodles, .soup, .fastfood, .friedFood]
 }
 
-typealias Selection = [FoodType: Bool]
+typealias Selections = [FoodType: Bool]
 
 #if DEBUG
-extension Selection {
+extension Selections {
     static let stub: Self = [.beverage: true, .bingsu: true, .bread: false, .icecream: true, .sweets: false, .cake: true]
 }
 #endif
