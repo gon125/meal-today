@@ -1,4 +1,6 @@
-# project-template-swift
+# 오늘 뭐 먹지? (Meal Today)
+선택하기 어려운 사람들을 위한 음식 🥘 선정 서비스!
+
 
 ## To Set Up
 run scripts/.project-setup.sh
