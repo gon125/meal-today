@@ -5,4 +5,4 @@
 //  Created by Geonhyeong LIm on 2021/05/17.
 //
 
-protocol State: Equatable {}
+protocol CustomState: Equatable {}

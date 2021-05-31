@@ -7,28 +7,45 @@
 import Combine
 
 protocol SelectionUseCase: UseCase {
-    func getFirstQuery() -> AnyPublisher<String, Never>
-    func getNextQuery(isDessert: Bool) -> AnyPublisher<[FoodType], Never>
-    func getFoodFrom(selection: Selection) -> AnyPublisher<Food?, Never>
-    func getFoodFromCache() -> AnyPublisher<Food?, Never>
+    mutating func getFoodFromSelection() -> AnyPublisher<Food?, Never>
+    mutating func addChoice(for foodType: FoodType, isChosen: Bool)
+    mutating func getNextQuery() -> AnyPublisher<FoodType?, Never>
+    mutating func setSelections(with selections: Selections)
 }
 
 #if DEBUG
+typealias DefaultSelectionUseCase = StubSelectionUseCaase
+
 struct StubSelectionUseCaase: SelectionUseCase {
+
+    private var selections = Selections()
+    private var queries: [FoodType] = [.dessertOrMeal]
+
+    mutating func setSelections(with selections: Selections) {
+        self.selections = selections
+    }
+
+    mutating func addChoice(for foodType: FoodType, isChosen: Bool) {
+        if foodType == .dessertOrMeal {
+            queries += isChosen ? FoodType.dessert : FoodType.meal
+        }
+        selections[foodType] = isChosen
+        
+        // TEST
+        var query : String = DefaultFoodRepository().getFood(from: selections)
+        query = String(query.dropLast(7))
+        print(query)
+        dbManager().readData(query: query)
+    }
+
+    mutating func getNextQuery() -> AnyPublisher<FoodType?, Never> {
+        guard let query = queries.popLast() else { return Just(nil).eraseToAnyPublisher() }
+        return Just(query).eraseToAnyPublisher()
+    }
+
     var foods: [Food]? = Food.randomFoods
 
-    func getFirstQuery() -> AnyPublisher<String, Never> {
-        Just(firstQuery).eraseToAnyPublisher()
-    }
+    mutating func getFoodFromSelection() -> AnyPublisher<Food?, Never> { Just(foods?.popLast()).eraseToAnyPublisher() }
 
-    func getNextQuery(isDessert: Bool) -> AnyPublisher<[FoodType], Never> {
-        Just(isDessert ? FoodType.dessert : FoodType.meal ).eraseToAnyPublisher()
-    }
-
-    func getFoodFrom(selection: Selection) -> AnyPublisher<Food?, Never> { Just(foods?.randomElement()).eraseToAnyPublisher() }
-
-    func getFoodFromCache() -> AnyPublisher<Food?, Never> { Just(foods?.randomElement()).eraseToAnyPublisher() }
-
-    let firstQuery: String = "디저트 Or 식사"
 }
 #endif

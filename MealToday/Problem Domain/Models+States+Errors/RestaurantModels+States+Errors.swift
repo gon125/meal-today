@@ -26,6 +26,6 @@ struct Food: Model {
 
 #if DEBUG
 extension Food {
-    static var randomFoods: [Food] { [Food(name: "피자"), Food(name: "햄버거"), Food(name: "순대국")] }
+    static var randomFoods: [Food] { [Food(name: "피자"), Food(name: "햄버거"), Food(name: "순대국"), Food(name: "케이크"), Food(name: "보쌈")] }
 }
 #endif
