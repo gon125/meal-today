@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4A84D90A265BF30F007CFF9A /* ShortcutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A84D909265BF30F007CFF9A /* ShortcutCard.swift */; };
 		4A84D90C265BF324007CFF9A /* ShortcurCardWide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A84D90B265BF324007CFF9A /* ShortcurCardWide.swift */; };
-		E766FB92266512030026080B /* dbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E766FB91266512030026080B /* dbManager.swift */; };
 		F3505410265E23B00006861C /* foods.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F350540F265E239C0006861C /* foods.sqlite */; };
 		F3505415265E28B90006861C /* ShortcutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3505414265E28B90006861C /* ShortcutViewModel.swift */; };
 		F3505417265E38CF0006861C /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3505416265E38CF0006861C /* DIContainer.swift */; };
@@ -45,7 +44,6 @@
 /* Begin PBXFileReference section */
 		4A84D909265BF30F007CFF9A /* ShortcutCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutCard.swift; sourceTree = "<group>"; };
 		4A84D90B265BF324007CFF9A /* ShortcurCardWide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcurCardWide.swift; sourceTree = "<group>"; };
-		E766FB91266512030026080B /* dbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dbManager.swift; sourceTree = "<group>"; };
 		F350540F265E239C0006861C /* foods.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = foods.sqlite; sourceTree = "<group>"; };
 		F3505414265E28B90006861C /* ShortcutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutViewModel.swift; sourceTree = "<group>"; };
 		F3505416265E38CF0006861C /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
@@ -202,7 +200,6 @@
 		F3C87B76265294C70038C92A /* DM */ = {
 			isa = PBXGroup;
 			children = (
-				E766FB91266512030026080B /* dbManager.swift */,
 				F3D6D692265FDAFE00185C84 /* Protocols */,
 				F3926AF3265BD54100F305FA /* Model */,
 				F3926AF0265BD3F900F305FA /* Repositories */,
@@ -362,7 +359,6 @@
 				F3C87BB42654D2550038C92A /* Model.swift in Sources */,
 				F3505417265E38CF0006861C /* DIContainer.swift in Sources */,
 				F3C87B7E265295850038C92A /* ShortcutView.swift in Sources */,
-				E766FB92266512030026080B /* dbManager.swift in Sources */,
 				F3D6D691265FDA8B00185C84 /* FoodRepository.swift in Sources */,
 				F3C87BB92654D27B0038C92A /* AppState.swift in Sources */,
 				F3C87BB52654D2550038C92A /* Location.swift in Sources */,

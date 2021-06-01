@@ -30,12 +30,6 @@ struct StubSelectionUseCaase: SelectionUseCase {
             queries += isChosen ? FoodType.dessert : FoodType.meal
         }
         selections[foodType] = isChosen
-        
-        // TEST
-        var query : String = DefaultFoodRepository().getFood(from: selections)
-        query = String(query.dropLast(7))
-        print(query)
-        dbManager().readData(query: query)
     }
 
     mutating func getNextQuery() -> AnyPublisher<FoodType?, Never> {

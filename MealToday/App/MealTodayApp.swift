@@ -12,7 +12,6 @@ struct MealTodayApp: App {
 
     init() {
         DIContainer.registerDependencies()
-        dbManager.init()
     }
 
     var body: some Scene {
