@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 protocol FoodRepository {
-    func getFood(from selections: Selections) -> AnyPublisher<[FoodDTO]?, Never>
+    func getFood(from selections: Selections) -> AnyPublisher<[Food]?, Never>
 }
