@@ -17,6 +17,7 @@
 		F350541E265E8ADC0006861C /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F350541D265E8ADC0006861C /* ResultViewModel.swift */; };
 		F35DAA252653E20B00033788 /* SelectionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35DAA242653E20B00033788 /* SelectionUseCase.swift */; };
 		F35DAA272653E42C00033788 /* SelectionModels+States+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35DAA262653E42C00033788 /* SelectionModels+States+Errors.swift */; };
+		F3A56D9E26660BD000ACB045 /* MapUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A56D9D26660BD000ACB045 /* MapUseCase.swift */; };
 		F3C87B662652926A0038C92A /* MealTodayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B652652926A0038C92A /* MealTodayApp.swift */; };
 		F3C87B682652926A0038C92A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B672652926A0038C92A /* AppView.swift */; };
 		F3C87B6A2652926B0038C92A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3C87B692652926B0038C92A /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		F350541D265E8ADC0006861C /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		F35DAA242653E20B00033788 /* SelectionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionUseCase.swift; sourceTree = "<group>"; };
 		F35DAA262653E42C00033788 /* SelectionModels+States+Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectionModels+States+Errors.swift"; sourceTree = "<group>"; };
+		F3A56D9D26660BD000ACB045 /* MapUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUseCase.swift; sourceTree = "<group>"; };
 		F3C87B622652926A0038C92A /* MealToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3C87B652652926A0038C92A /* MealTodayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTodayApp.swift; sourceTree = "<group>"; };
 		F3C87B672652926A0038C92A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			children = (
 				F3C87B9726529A300038C92A /* RestaurantUseCase.swift */,
 				F3C87BA326529AEC0038C92A /* ShortcutUseCase.swift */,
+				F3A56D9D26660BD000ACB045 /* MapUseCase.swift */,
 				F35DAA242653E20B00033788 /* SelectionUseCase.swift */,
 			);
 			path = UseCases;
@@ -362,6 +365,7 @@
 				F3D6D691265FDA8B00185C84 /* FoodRepository.swift in Sources */,
 				F3C87BB92654D27B0038C92A /* AppState.swift in Sources */,
 				F3C87BB52654D2550038C92A /* Location.swift in Sources */,
+				F3A56D9E26660BD000ACB045 /* MapUseCase.swift in Sources */,
 				F3C87BA626529B3B0038C92A /* ShortcutModels+States+Errors.swift in Sources */,
 				F3D6D694265FDB2500185C84 /* DefaultFoodRepository.swift in Sources */,
 				F3C87B82265295C60038C92A /* MainView.swift in Sources */,
