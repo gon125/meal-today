@@ -17,6 +17,8 @@
 		F350541E265E8ADC0006861C /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F350541D265E8ADC0006861C /* ResultViewModel.swift */; };
 		F35DAA252653E20B00033788 /* SelectionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35DAA242653E20B00033788 /* SelectionUseCase.swift */; };
 		F35DAA272653E42C00033788 /* SelectionModels+States+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35DAA262653E42C00033788 /* SelectionModels+States+Errors.swift */; };
+		F3A56D922665E0F800ACB045 /* MealTodayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A56D912665E0F800ACB045 /* MealTodayTests.swift */; };
+		F3A56D9A2665E11000ACB045 /* ShortcutUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A56D992665E11000ACB045 /* ShortcutUseCaseTests.swift */; };
 		F3C87B662652926A0038C92A /* MealTodayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B652652926A0038C92A /* MealTodayApp.swift */; };
 		F3C87B682652926A0038C92A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B672652926A0038C92A /* AppView.swift */; };
 		F3C87B6A2652926B0038C92A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3C87B692652926B0038C92A /* Assets.xcassets */; };
@@ -41,6 +43,16 @@
 		F3D6D694265FDB2500185C84 /* DefaultFoodRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D6D693265FDB2500185C84 /* DefaultFoodRepository.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F3A56D942665E0F800ACB045 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3C87B5A2652926A0038C92A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3C87B612652926A0038C92A;
+			remoteInfo = MealToday;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		4A84D909265BF30F007CFF9A /* ShortcutCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutCard.swift; sourceTree = "<group>"; };
 		4A84D90B265BF324007CFF9A /* ShortcurCardWide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcurCardWide.swift; sourceTree = "<group>"; };
@@ -52,6 +64,10 @@
 		F350541D265E8ADC0006861C /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		F35DAA242653E20B00033788 /* SelectionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionUseCase.swift; sourceTree = "<group>"; };
 		F35DAA262653E42C00033788 /* SelectionModels+States+Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectionModels+States+Errors.swift"; sourceTree = "<group>"; };
+		F3A56D8F2665E0F800ACB045 /* MealTodayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealTodayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3A56D912665E0F800ACB045 /* MealTodayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTodayTests.swift; sourceTree = "<group>"; };
+		F3A56D932665E0F800ACB045 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3A56D992665E11000ACB045 /* ShortcutUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutUseCaseTests.swift; sourceTree = "<group>"; };
 		F3C87B622652926A0038C92A /* MealToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3C87B652652926A0038C92A /* MealTodayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTodayApp.swift; sourceTree = "<group>"; };
 		F3C87B672652926A0038C92A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -79,6 +95,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F3A56D8C2665E0F800ACB045 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3C87B5F2652926A0038C92A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -131,10 +154,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		F3A56D902665E0F800ACB045 /* MealTodayTests */ = {
+			isa = PBXGroup;
+			children = (
+				F3A56D912665E0F800ACB045 /* MealTodayTests.swift */,
+				F3A56D992665E11000ACB045 /* ShortcutUseCaseTests.swift */,
+				F3A56D932665E0F800ACB045 /* Info.plist */,
+			);
+			path = MealTodayTests;
+			sourceTree = "<group>";
+		};
 		F3C87B592652926A0038C92A = {
 			isa = PBXGroup;
 			children = (
 				F3C87B642652926A0038C92A /* MealToday */,
+				F3A56D902665E0F800ACB045 /* MealTodayTests */,
 				F3C87B632652926A0038C92A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -143,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				F3C87B622652926A0038C92A /* MealToday.app */,
+				F3A56D8F2665E0F800ACB045 /* MealTodayTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -268,6 +303,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F3A56D8E2665E0F800ACB045 /* MealTodayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3A56D982665E0F800ACB045 /* Build configuration list for PBXNativeTarget "MealTodayTests" */;
+			buildPhases = (
+				F3A56D8B2665E0F800ACB045 /* Sources */,
+				F3A56D8C2665E0F800ACB045 /* Frameworks */,
+				F3A56D8D2665E0F800ACB045 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3A56D952665E0F800ACB045 /* PBXTargetDependency */,
+			);
+			name = MealTodayTests;
+			productName = MealTodayTests;
+			productReference = F3A56D8F2665E0F800ACB045 /* MealTodayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F3C87B612652926A0038C92A /* MealToday */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3C87B712652926B0038C92A /* Build configuration list for PBXNativeTarget "MealToday" */;
@@ -295,6 +348,10 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					F3A56D8E2665E0F800ACB045 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = F3C87B612652926A0038C92A;
+					};
 					F3C87B612652926A0038C92A = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -314,11 +371,19 @@
 			projectRoot = "";
 			targets = (
 				F3C87B612652926A0038C92A /* MealToday */,
+				F3A56D8E2665E0F800ACB045 /* MealTodayTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F3A56D8D2665E0F800ACB045 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3C87B602652926A0038C92A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -352,6 +417,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F3A56D8B2665E0F800ACB045 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3A56D922665E0F800ACB045 /* MealTodayTests.swift in Sources */,
+				F3A56D9A2665E11000ACB045 /* ShortcutUseCaseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3C87B5E2652926A0038C92A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -390,7 +464,55 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F3A56D952665E0F800ACB045 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3C87B612652926A0038C92A /* MealToday */;
+			targetProxy = F3A56D942665E0F800ACB045 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		F3A56D962665E0F800ACB045 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24523H34CV;
+				INFOPLIST_FILE = MealTodayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.gon125.MealTodayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MealToday.app/MealToday";
+			};
+			name = Debug;
+		};
+		F3A56D972665E0F800ACB045 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24523H34CV;
+				INFOPLIST_FILE = MealTodayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.gon125.MealTodayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MealToday.app/MealToday";
+			};
+			name = Release;
+		};
 		F3C87B6F2652926B0038C92A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -554,6 +676,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F3A56D982665E0F800ACB045 /* Build configuration list for PBXNativeTarget "MealTodayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3A56D962665E0F800ACB045 /* Debug */,
+				F3A56D972665E0F800ACB045 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F3C87B5D2652926A0038C92A /* Build configuration list for PBXProject "MealToday" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
