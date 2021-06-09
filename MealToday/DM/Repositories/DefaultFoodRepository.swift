@@ -15,7 +15,8 @@ struct DefaultFoodRepository: FoodRepository {
         var query = ""
 
         for key in selections.filter({ $0.value == true}).keys {
-            query += "SELECT name FROM \(key.tableName) UNION "
+            guard let tableName = key.tableName else { continue }
+            query += "SELECT name FROM \(tableName) UNION "
         }
 
         query.removeLast(7)
@@ -24,7 +25,7 @@ struct DefaultFoodRepository: FoodRepository {
 }
 
 extension FoodType {
-    var tableName: String {
+    var tableName: String? {
         switch self {
         case .friedFood: return "fried"
         case .fastfood: return "fastfood"
@@ -39,7 +40,7 @@ extension FoodType {
         case .sweets: return "sweats"
         case .beverage: return "beverage"
         case .icecream: return "icecream"
-        default: return ""
+        default: return nil
         }
     }
 }
