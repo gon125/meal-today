@@ -24,7 +24,7 @@ struct MealTodayApp: App {
 extension DIContainer {
     static func registerDependencies() {
         DIContainer.shared.register(DefaultShortcutUseCase() as ShortcutUseCase)
-        DIContainer.shared.register(DefaultSelectionUseCase() as SelectionUseCase)
+        DIContainer.shared.register(DefaultSelectionUseCase(repository: DefaultFoodRepository()) as SelectionUseCase)
         DIContainer.shared.register(AppState())
     }
 }
