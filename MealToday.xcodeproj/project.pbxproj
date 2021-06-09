@@ -44,6 +44,7 @@
 		F3D6D68F265FDA8200185C84 /* FoodDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D6D68E265FDA8200185C84 /* FoodDTO.swift */; };
 		F3D6D691265FDA8B00185C84 /* FoodRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D6D690265FDA8B00185C84 /* FoodRepository.swift */; };
 		F3D6D694265FDB2500185C84 /* DefaultFoodRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D6D693265FDB2500185C84 /* DefaultFoodRepository.swift */; };
+		F3EA55C12670F07B000633D3 /* SelectionUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EA55C02670F07B000633D3 /* SelectionUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		F3D6D68E265FDA8200185C84 /* FoodDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDTO.swift; sourceTree = "<group>"; };
 		F3D6D690265FDA8B00185C84 /* FoodRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodRepository.swift; sourceTree = "<group>"; };
 		F3D6D693265FDB2500185C84 /* DefaultFoodRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFoodRepository.swift; sourceTree = "<group>"; };
+		F3EA55C02670F07B000633D3 /* SelectionUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				F3A56D992665E11000ACB045 /* ShortcutUseCaseTests.swift */,
 				F3B0715226666C6200714BC4 /* FoodRepositoryTests.swift */,
 				F3A56D932665E0F800ACB045 /* Info.plist */,
+				F3EA55C02670F07B000633D3 /* SelectionUseCaseTests.swift */,
 			);
 			path = MealTodayTests;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3EA55C12670F07B000633D3 /* SelectionUseCaseTests.swift in Sources */,
 				F3A56D922665E0F800ACB045 /* MealTodayTests.swift in Sources */,
 				F3B0715326666C6200714BC4 /* FoodRepositoryTests.swift in Sources */,
 				F3A56D9A2665E11000ACB045 /* ShortcutUseCaseTests.swift in Sources */,
