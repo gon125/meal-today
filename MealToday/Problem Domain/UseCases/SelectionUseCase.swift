@@ -11,10 +11,16 @@ protocol SelectionUseCase: UseCase {
     mutating func addChoice(for foodType: FoodType, isChosen: Bool)
     mutating func getNextQuery() -> AnyPublisher<FoodType?, Never>
     mutating func setSelections(with selections: Selections)
+    mutating func reset()
+    func getSelections() -> Selections
 }
 
 #if DEBUG
 struct StubSelectionUseCase: SelectionUseCase {
+    mutating func reset() {
+        selections = Selections()
+        queries = [.dessertOrMeal]
+    }
 
     private var selections = Selections()
     private var queries: [FoodType] = [.dessertOrMeal]
@@ -35,6 +41,10 @@ struct StubSelectionUseCase: SelectionUseCase {
         return Just(query).eraseToAnyPublisher()
     }
 
+    func getSelections() -> Selections {
+        self.selections
+    }
+
     var foods: [Food]? = Food.randomFoods
 
     mutating func getFoodFromSelection() -> AnyPublisher<Food?, Never> { Just(foods?.popLast()).eraseToAnyPublisher() }
@@ -50,7 +60,6 @@ class FoodSelectionUseCase: SelectionUseCase {
     private var queries: [FoodType] = [.dessertOrMeal]
     private let repository: FoodRepository
     var foods: LoopIterator<Food>?
-    var selectedFoodIndex = 0
 
     init(repository: FoodRepository) {
         self.repository = repository
@@ -80,6 +89,16 @@ class FoodSelectionUseCase: SelectionUseCase {
 
     func setSelections(with selections: Selections) {
         self.selections = selections
+    }
+
+    func getSelections() -> Selections {
+        self.selections
+    }
+
+    func reset() {
+        self.selections = Selections()
+        self.queries = [.dessertOrMeal]
+        self.foods = nil
     }
 }
 
