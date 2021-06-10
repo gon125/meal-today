@@ -9,8 +9,25 @@ import SwiftUI
 
 struct ResultView: View {
     @ObservedObject var viewModel: ViewModel = ViewModel()
+    @State var showingAlert = false
+
     var body: some View {
         VStack(spacing: 10) {
+            HStack {
+                Spacer()
+                // [NEED] route to ShortcutView
+                Button(action: {  }, label: {
+                    Image(systemName: "house.fill")
+                        .font(.system(size: 30))
+                        .shadow(radius: 1)
+                })
+
+            }
+            .padding(.horizontal, 20)
+            Divider()
+
+            Spacer()
+                .frame(maxHeight: 65)
 
             ZStack {
                 Circle()
@@ -25,6 +42,7 @@ struct ResultView: View {
                     Text(viewModel.foodName)
                         .font(.system(size: 60))
                         .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
                         .foregroundColor(Color.white)
                         .shadow(radius: 10/*@END_MENU_TOKEN@*/)
 
@@ -35,7 +53,8 @@ struct ResultView: View {
                 .font(.title)
                 .padding(.bottom, 5)
             HStack {
-                Button(action: { }, label: {
+                Button(action: {self.showingAlert = true}, label: {
+
                     ZStack {
                         RoundedRectangle(cornerRadius: 12)
                             .frame(width: 120, height: 50)
@@ -46,6 +65,11 @@ struct ResultView: View {
                             .foregroundColor(Color.white)
                     }
                 })
+
+                .popover(isPresented: $showingAlert) {
+                    Save2View(show: self.$showingAlert)
+                }
+
                 Button(action: { viewModel.retry() }, label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 12)
@@ -60,7 +84,6 @@ struct ResultView: View {
             }
             ZStack {
                 RoundedRectangle(cornerRadius: 15)
-//                            .stroke(lineWidth: 2)
                     .frame(width: 140, height: 60)
                     .foregroundColor(Color.white)
                     .shadow(radius: 5)
@@ -69,6 +92,67 @@ struct ResultView: View {
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .foregroundColor(Color.black)
             }.padding(.top, 8)
+            Spacer()
+                .frame(minHeight: 50)
+        }
+    }
+}
+
+struct Save2View: View {
+    @Binding var show: Bool
+
+    @State var name = "바로가기 이름"
+    @State var color = Color.blue
+    @State var emoji = "🍜"
+
+    var body: some View {
+        VStack(spacing: 0) {
+            ZStack {
+                Text("바로가기 저장")
+                    .font(.headline).padding()
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        self.show = false
+                    }, label: { Text("취소") }).padding()
+                }
+            }
+            Divider()
+            Form {
+                Section(header: Text("미리보기")) {
+                    ShortcutCardEmoji(icon: emoji, title: name, detail: "음식 종류 ...", bgColor: color)
+                }
+                Section(header: Text("바로가기 이름")) {
+                    HStack {
+                        Image(systemName: "person")
+                            .foregroundColor(.gray)
+                        TextField("프로필 이름을 입력하세요", text: $name)
+                    }
+                    .padding()
+
+                }
+                Section(header: Text("바로가기 색상")) {
+                    ColorPicker("색상을 선택하세요", selection: $color)
+                }
+
+                Section(header: Text("바로가기 이모지")) {
+                    //                    Text(emoji)
+                    TextField("프로필 이모지를 입력하세요", text: $emoji)
+                }
+
+                Section {
+                    Button(action: { }/*@END_MENU_TOKEN@*/, label: {
+                        HStack {
+                            Spacer()
+                            Text("저장하기")
+                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                .foregroundColor(color)
+                            Spacer()
+                        }
+
+                    })
+                }
+            }
         }
     }
 }
