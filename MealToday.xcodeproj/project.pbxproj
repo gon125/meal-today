@@ -18,7 +18,6 @@
 		F350541E265E8ADC0006861C /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F350541D265E8ADC0006861C /* ResultViewModel.swift */; };
 		F35DAA252653E20B00033788 /* SelectionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35DAA242653E20B00033788 /* SelectionUseCase.swift */; };
 		F35DAA272653E42C00033788 /* SelectionModels+States+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35DAA262653E42C00033788 /* SelectionModels+States+Errors.swift */; };
-		F365C9DD267245E9000CF9F0 /* SaveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365C9DC267245E9000CF9F0 /* SaveViewModel.swift */; };
 		F3A56D922665E0F800ACB045 /* MealTodayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A56D912665E0F800ACB045 /* MealTodayTests.swift */; };
 		F3A56D9A2665E11000ACB045 /* ShortcutUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A56D992665E11000ACB045 /* ShortcutUseCaseTests.swift */; };
 		F3A56D9E26660BD000ACB045 /* MapUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A56D9D26660BD000ACB045 /* MapUseCase.swift */; };
@@ -69,7 +68,6 @@
 		F350541D265E8ADC0006861C /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		F35DAA242653E20B00033788 /* SelectionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionUseCase.swift; sourceTree = "<group>"; };
 		F35DAA262653E42C00033788 /* SelectionModels+States+Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectionModels+States+Errors.swift"; sourceTree = "<group>"; };
-		F365C9DC267245E9000CF9F0 /* SaveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveViewModel.swift; sourceTree = "<group>"; };
 		F3A56D8F2665E0F800ACB045 /* MealTodayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealTodayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3A56D912665E0F800ACB045 /* MealTodayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTodayTests.swift; sourceTree = "<group>"; };
 		F3A56D932665E0F800ACB045 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 				F3505414265E28B90006861C /* ShortcutViewModel.swift */,
 				F350541B265E727C0006861C /* SelectionViewModel.swift */,
 				F350541D265E8ADC0006861C /* ResultViewModel.swift */,
-				F365C9DC267245E9000CF9F0 /* SaveViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -445,7 +442,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3C87BB42654D2550038C92A /* Model.swift in Sources */,
-				F365C9DD267245E9000CF9F0 /* SaveViewModel.swift in Sources */,
 				F3505417265E38CF0006861C /* DIContainer.swift in Sources */,
 				F3C87B7E265295850038C92A /* ShortcutView.swift in Sources */,
 				F3D6D691265FDA8B00185C84 /* FoodRepository.swift in Sources */,
