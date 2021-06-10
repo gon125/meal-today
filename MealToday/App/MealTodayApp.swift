@@ -26,5 +26,6 @@ extension DIContainer {
         DIContainer.shared.register(DefaultShortcutUseCase() as ShortcutUseCase)
         DIContainer.shared.register(DefaultSelectionUseCase(repository: DefaultFoodRepository()) as SelectionUseCase)
         DIContainer.shared.register(AppState())
+        DIContainer.shared.register(DefaultMapUseCase() as MapUseCase)
     }
 }
