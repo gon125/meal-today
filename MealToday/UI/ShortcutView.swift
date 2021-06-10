@@ -25,26 +25,28 @@ struct ShortcutView: View {
                     .font(.system(size: 40))
                     .fontWeight(.black)
                     .padding(.horizontal, 20)
-
-                ScrollView {
-                    VStack {
-                        ForEach(viewModel.shortcuts) { shortcut in
-                            Button(action: { viewModel.routeToResultView(with: shortcut) }, label: {
-                                // Emoji 사용 --> ShortcutCardEmoji()
-                                ShortcutCard(icon: shortcut.icon, title: shortcut.name, detail: shortcut.description, bgColor: shortcut.color.color)
-                            })
-
-                        }
-                        ShortcutCardWide()
-                        ShortcutCardEmoji(icon: "🌙", title: "출출한 밤엔 !", detail: "치킨, 피자, 라면, 떡볶이, ... ", bgColor: Color.gray)
-                        ShortcutCardEmoji(icon: "🌧", title: "비도 오고 그래서", detail: "파전, 칼국수, 수제비 ...", bgColor: Color.blue)
-                        ShortcutCardEmoji(icon: "🍔", title: "빨리 빨리!!", detail: "김밥, 햅버거, 샌드위치 ...", bgColor: Color.green)
-                        ShortcutCardEmoji(icon: "❤️", title: "데이트..?", detail: "파스타, 스테이크, 초밥 ...", bgColor: Color.pink)
-                        ShortcutCardEmoji(icon: "🍽", title: "특별한 날", detail: "소고기, 참치회, 조개구이 ...", bgColor: Color.purple)
-
+                    .padding(.bottom, 10)
+                List {
+                    ShortcutCardWide()
+                    ForEach(viewModel.shortcuts) { shortcut in
+                        Button(action: { viewModel.routeToResultView(with: shortcut) }, label: {
+                            // Emoji 사용 --> ShortcutCardEmoji()
+                            ShortcutCardEmoji(icon: shortcut.icon, title: shortcut.name, detail: shortcut.description, bgColor: shortcut.color.color)
+                        })
                     }
-                    .padding()
+                    .onDelete(perform: { indexSet in
+                        indexSet.forEach {
+                            viewModel.deleteShortcut(index: $0)
+                        }
+                    })
+                    ShortcutCardEmoji(icon: "🌙", title: "출출한 밤엔 !", detail: "치킨, 피자, 라면, 떡볶이, ... ", bgColor: Color.gray)
+                    ShortcutCardEmoji(icon: "🌧", title: "비도 오고 그래서", detail: "파전, 칼국수, 수제비 ...", bgColor: Color.blue)
+                    ShortcutCardEmoji(icon: "🍔", title: "빨리 빨리!!", detail: "김밥, 햅버거, 샌드위치 ...", bgColor: Color.green)
+                    ShortcutCardEmoji(icon: "❤️", title: "데이트..?", detail: "파스타, 스테이크, 초밥 ...", bgColor: Color.pink)
+                    ShortcutCardEmoji(icon: "🍽", title: "특별한 날", detail: "소고기, 참치회, 조개구이 ...", bgColor: Color.purple)
                 }
+                .listStyle(SidebarListStyle())
+
             }
 
             Button(action: { viewModel.routeToSelectingView() }, label: {
