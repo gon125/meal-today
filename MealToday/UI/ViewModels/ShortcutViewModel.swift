@@ -26,5 +26,9 @@ extension ShortcutView {
             selectionUseCase.setSelections(with: shortcut.selections)
             appState.viewRouting = .resultView
         }
+
+        func deleteShortcut(index: Int) {
+            shortcutUseCase.removeShorcut(id: shortcuts[index].id)
+        }
     }
 }
