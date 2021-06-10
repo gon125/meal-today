@@ -22,11 +22,10 @@ extension ResultView {
             selectFood()
         }
 
-        // MARK: - Private
         private var cancelBag = Set<AnyCancellable>()
         private func selectFood() {
             selectionUseCase.getFoodFromSelection().sink { [weak self] in
-                self?.foodName = $0?.name ?? "없습니다 ㅜㅡㅠ"
+                self?.foodName = $0?.name ?? "없습니다\nㅜㅡㅠ"
             }.store(in: &cancelBag)
         }
     }
