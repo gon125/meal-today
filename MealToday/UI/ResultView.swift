@@ -16,7 +16,7 @@ struct ResultView: View {
             HStack {
                 Spacer()
                 // [NEED] route to ShortcutView
-                Button(action: {  }, label: {
+                Button(action: { viewModel.routeToShortcutView()  }, label: {
                     Image(systemName: "house.fill")
                         .font(.system(size: 30))
                         .shadow(radius: 1)
@@ -67,7 +67,7 @@ struct ResultView: View {
                 })
 
                 .popover(isPresented: $showingAlert) {
-                    Save2View(show: self.$showingAlert)
+                    Save2View(show: self.$showingAlert, viewModel: viewModel)
                 }
 
                 Button(action: { viewModel.retry() }, label: {
@@ -82,28 +82,36 @@ struct ResultView: View {
                 })
 
             }
-            ZStack {
-                RoundedRectangle(cornerRadius: 15)
-                    .frame(width: 140, height: 60)
-                    .foregroundColor(Color.white)
-                    .shadow(radius: 5)
-                Text("위치 찾기")
-                    .font(.system(size: 30))
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    .foregroundColor(Color.black)
-            }.padding(.top, 8)
+            Button(action: {
+                viewModel.routeToMap()
+            }, label: {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 15)
+                        .frame(width: 140, height: 60)
+                        .foregroundColor(Color.white)
+                        .shadow(radius: 5)
+                    Text("위치 찾기")
+                        .font(.system(size: 30))
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        .foregroundColor(Color.black)
+                }.padding(.top, 8)
+            })
             Spacer()
                 .frame(minHeight: 50)
         }
     }
+
 }
 
 struct Save2View: View {
     @Binding var show: Bool
 
     @State var name = "바로가기 이름"
-    @State var color = Color.blue
+    @State var color: CGColor = UIColor.blue.cgColor
     @State var emoji = "🍜"
+    @State var buttonClicked = false
+
+    weak var viewModel: ResultView.ViewModel?
 
     var body: some View {
         VStack(spacing: 0) {
@@ -120,7 +128,7 @@ struct Save2View: View {
             Divider()
             Form {
                 Section(header: Text("미리보기")) {
-                    ShortcutCardEmoji(icon: emoji, title: name, detail: "음식 종류 ...", bgColor: color)
+                    ShortcutCardEmoji(icon: emoji, title: name, detail: "음식 종류 ...", bgColor: Color(color))
                 }
                 Section(header: Text("바로가기 이름")) {
                     HStack {
@@ -141,16 +149,22 @@ struct Save2View: View {
                 }
 
                 Section {
-                    Button(action: { }/*@END_MENU_TOKEN@*/, label: {
+                    Button(
+                        action: {
+                            buttonClicked = true
+                            viewModel?.saveShortcut(name: name, icon: emoji, color: color.codableColor)
+                            buttonClicked = false
+                            self.show = false
+                        }/*@END_MENU_TOKEN@*/, label: {
                         HStack {
                             Spacer()
                             Text("저장하기")
                                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                                .foregroundColor(color)
+                                .foregroundColor(Color(color))
                             Spacer()
                         }
 
-                    })
+                        }).disabled(buttonClicked)
                 }
             }
         }
