@@ -11,7 +11,6 @@ struct DefaultFoodRepository: FoodRepository {
     private let dbManager = DBManager()
 
     func getFood(from selections: Selections) -> AnyPublisher<[Food]?, Never> {
-
         var query = ""
 
         for key in selections.filter({ $0.value == true}).keys {
@@ -19,7 +18,7 @@ struct DefaultFoodRepository: FoodRepository {
             query += "SELECT name FROM \(tableName) UNION "
         }
 
-        query.removeLast(7)
+        if query.count >= 7 { query.removeLast(7) }
         return Just(dbManager.readData(query: query)).eraseToAnyPublisher()
     }
 }
