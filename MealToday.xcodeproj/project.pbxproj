@@ -30,8 +30,6 @@
 		F3C87B7C2652955F0038C92A /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B7B2652955F0038C92A /* SelectionView.swift */; };
 		F3C87B7E265295850038C92A /* ShortcutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B7D265295850038C92A /* ShortcutView.swift */; };
 		F3C87B802652959E0038C92A /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B7F2652959E0038C92A /* ResultView.swift */; };
-		F3C87B82265295C60038C92A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B81265295C60038C92A /* MainView.swift */; };
-		F3C87B84265296580038C92A /* SaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B83265296580038C92A /* SaveView.swift */; };
 		F3C87B9E26529A300038C92A /* RestaurantModels+States+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B9226529A300038C92A /* RestaurantModels+States+Errors.swift */; };
 		F3C87BA126529A300038C92A /* RestaurantUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87B9726529A300038C92A /* RestaurantUseCase.swift */; };
 		F3C87BA426529AEC0038C92A /* ShortcutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C87BA326529AEC0038C92A /* ShortcutUseCase.swift */; };
@@ -86,8 +84,6 @@
 		F3C87B7B2652955F0038C92A /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
 		F3C87B7D265295850038C92A /* ShortcutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutView.swift; sourceTree = "<group>"; };
 		F3C87B7F2652959E0038C92A /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
-		F3C87B81265295C60038C92A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		F3C87B83265296580038C92A /* SaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveView.swift; sourceTree = "<group>"; };
 		F3C87B9226529A300038C92A /* RestaurantModels+States+Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RestaurantModels+States+Errors.swift"; sourceTree = "<group>"; };
 		F3C87B9726529A300038C92A /* RestaurantUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantUseCase.swift; sourceTree = "<group>"; };
 		F3C87BA326529AEC0038C92A /* ShortcutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutUseCase.swift; sourceTree = "<group>"; };
@@ -239,8 +235,6 @@
 				4A84D90B265BF324007CFF9A /* ShortcurCardWide.swift */,
 				F3C87B7D265295850038C92A /* ShortcutView.swift */,
 				F3C87B7F2652959E0038C92A /* ResultView.swift */,
-				F3C87B81265295C60038C92A /* MainView.swift */,
-				F3C87B83265296580038C92A /* SaveView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -457,7 +451,6 @@
 				F3B07151266665F900714BC4 /* DBManager.swift in Sources */,
 				F3C87BA626529B3B0038C92A /* ShortcutModels+States+Errors.swift in Sources */,
 				F3D6D694265FDB2500185C84 /* DefaultFoodRepository.swift in Sources */,
-				F3C87B82265295C60038C92A /* MainView.swift in Sources */,
 				4A84D90C265BF324007CFF9A /* ShortcurCardWide.swift in Sources */,
 				F3C87B9E26529A300038C92A /* RestaurantModels+States+Errors.swift in Sources */,
 				F3C87BA126529A300038C92A /* RestaurantUseCase.swift in Sources */,
@@ -468,7 +461,6 @@
 				F350541A265E71860006861C /* CodableColor.swift in Sources */,
 				4A84D90A265BF30F007CFF9A /* ShortcutCard.swift in Sources */,
 				F3D6D68F265FDA8200185C84 /* FoodDTO.swift in Sources */,
-				F3C87B84265296580038C92A /* SaveView.swift in Sources */,
 				F35DAA272653E42C00033788 /* SelectionModels+States+Errors.swift in Sources */,
 				F35DAA252653E20B00033788 /* SelectionUseCase.swift in Sources */,
 				F3C87B662652926A0038C92A /* MealTodayApp.swift in Sources */,
