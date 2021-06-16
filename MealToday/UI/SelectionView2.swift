@@ -13,7 +13,7 @@ struct SelectionView2: View {
     var body: some View {
         VStack {
             HStack {
-                Button(action: { viewModel.onYes1() }, label: {
+                Button(action: { viewModel.selectionA(with: 1) }, label: {
                     ZStack {
 
                         Circle()
@@ -29,7 +29,7 @@ struct SelectionView2: View {
 
                 Divider().frame(height: 180).padding(.horizontal, 20)
 
-                Button(action: { viewModel.onNo1() }, label: {
+                Button(action: { viewModel.selectionA(with: 0) }, label: {
                     ZStack {
                         Circle()
                             .fill(Color.orange)
@@ -48,7 +48,7 @@ struct SelectionView2: View {
                 .fontWeight(.black)
             
             HStack {
-                Button(action: { viewModel.onYes2() }, label: {
+                Button(action: { viewModel.selectionB(with: 1) }, label: {
                     ZStack {
 
                         Circle()
@@ -63,7 +63,7 @@ struct SelectionView2: View {
 
                 Divider().frame(height: 180).padding(.horizontal, 20)
 
-                Button(action: { viewModel.onNo2() }, label: {
+                Button(action: { viewModel.selectionB(with: 0) }, label: {
                     ZStack {
                         Circle()
                             .fill(Color.orange)

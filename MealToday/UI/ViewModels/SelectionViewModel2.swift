@@ -16,60 +16,53 @@ extension SelectionView2 {
         @Injected private var appState: AppState
         
         private var selectedA: Int = 0
+        private var valueOfA: Int = 0
         private var selectedB: Int = 0
+        private var valueOfB: Int = 0
 
         init() {
             getNextQuery()
         }
-
-        func onYes1() {
+        
+        func selectionA(with selection: Int) {
             if(selectedA == 0) {
                 self.selectedA = selectedA + 1
-            }
-            selectionUseCase.addChoice(for: foodType, isChosen: true)
-            if(self.selectedA == 1 && self.selectedB == 1) {
-                resetSelectedValue()
-                getNextQuery()
-            }
-        }
-
-        func onNo1() {
-            if(selectedA == 0) {
-                self.selectedA = selectedA + 1
-            }
-            selectionUseCase.addChoice(for: foodType, isChosen: false)
-            if(self.selectedA == 1 && self.selectedB == 1) {
-                resetSelectedValue()
-                getNextQuery()
+                self.valueOfA = selection
+                
+                if(self.selectedA == 1 && self.selectedB == 1) {
+                    if(valueOfB == 1 && valueOfA == 1) {
+                        selectionUseCase.addChoice(for: foodType, isChosen: true)
+                    } else {
+                        selectionUseCase.addChoice(for: foodType, isChosen: false)
+                    }
+                    resetSelectedValue()
+                    getNextQuery()
+                }
             }
         }
         
-        func onYes2() {
+        func selectionB(with selection: Int) {
             if(selectedB == 0) {
                 self.selectedB = selectedB + 1
-            }
-            selectionUseCase.addChoice(for: foodType, isChosen: true)
-            if(self.selectedA == 1 && self.selectedB == 1) {
-                print("All selected")
-                resetSelectedValue()
-                getNextQuery()
-            }
-        }
-
-        func onNo2() {
-            if(selectedB == 0) {
-                self.selectedB = selectedB + 1
-            }
-            selectionUseCase.addChoice(for: foodType, isChosen: false)
-            if(self.selectedA == 1 && self.selectedB == 1) {
-                resetSelectedValue()
-                getNextQuery()
+                self.valueOfB = selection
+                
+                if(self.selectedA == 1 && self.selectedB == 1) {
+                    if(valueOfB == 1 && valueOfA == 1) {
+                        selectionUseCase.addChoice(for: foodType, isChosen: true)
+                    } else {
+                        selectionUseCase.addChoice(for: foodType, isChosen: false)
+                    }
+                    resetSelectedValue()
+                    getNextQuery()
+                }
             }
         }
         
         func resetSelectedValue() {
             self.selectedA = 0
             self.selectedB = 0
+            self.valueOfA = 0
+            self.valueOfB = 0
         }
 
         // MARK: - Private
