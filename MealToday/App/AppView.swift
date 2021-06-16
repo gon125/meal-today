@@ -17,6 +17,7 @@ struct AppView: View {
             switch viewRouting {
             case .shortcut: ShortcutView()
             case .selecting: SelectionView()
+            case .selecting2p: SelectionView2()
             case .resultView: ResultView()
             }
         }.onReceive(appState.$viewRouting, perform: { viewRouting = $0 })

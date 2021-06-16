@@ -12,6 +12,7 @@ final class AppState: ObservableObject {
     enum ViewRouting {
         case shortcut
         case selecting
+        case selecting2p
         case resultView
     }
 }
