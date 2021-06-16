@@ -39,7 +39,7 @@ struct ResultView: View {
                     Text("오늘 추천 메뉴는")
                         .font(.system(size: 35))
                         .fontWeight(.medium)
-                    Text(viewModel.foodName)
+                    Text(changeLine(resultFood: viewModel.foodName))
                         .font(.system(size: 60))
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
@@ -175,4 +175,20 @@ struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
         ResultView()
     }
+}
+
+// 어디에 넣을지 몰라서 일단 여기에 둡니다....
+func changeLine(resultFood: String) -> String {
+    var loc = 0
+    var rr = resultFood
+    if let rangeR = rr.range(of: " ") {
+        loc = rr.distance(from: rr.startIndex, to: rangeR.lowerBound)
+    }
+
+    if loc == 0 {
+            return resultFood
+    }
+    let i = rr.index(rr.startIndex, offsetBy: loc)
+    rr.insert("\n", at: i)
+    return rr
 }
