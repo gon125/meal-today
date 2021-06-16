@@ -30,7 +30,10 @@ extension SelectionView2 {
                 self.valueOfA = selection
 
                 if self.selectedA == 1 && self.selectedB == 1 {
-                    if valueOfB == 1 && valueOfA == 1 {
+                    if valueOfA != valueOfB && foodType == .dessertOrMeal {
+                        resetSelectedValue()
+                        return
+                    } else if valueOfB == 1 && valueOfA == 1 {
                         selectionUseCase.addChoice(for: foodType, isChosen: true)
                     } else {
                         selectionUseCase.addChoice(for: foodType, isChosen: false)
@@ -47,7 +50,10 @@ extension SelectionView2 {
                 self.valueOfB = selection
 
                 if self.selectedA == 1 && self.selectedB == 1 {
-                    if valueOfB == 1 && valueOfA == 1 {
+                    if valueOfA != valueOfB && foodType == .dessertOrMeal {
+                        resetSelectedValue()
+                        return
+                    } else if valueOfB == 1 && valueOfA == 1 {
                         selectionUseCase.addChoice(for: foodType, isChosen: true)
                     } else {
                         selectionUseCase.addChoice(for: foodType, isChosen: false)
