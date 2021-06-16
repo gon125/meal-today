@@ -12,9 +12,6 @@ struct SelectionView2: View {
 
     var body: some View {
         VStack {
-            Text(viewModel.query)
-                .font(.system(size: 40))
-                .fontWeight(.black)
             HStack {
                 Button(action: { viewModel.onYes1() }, label: {
                     ZStack {
@@ -44,6 +41,10 @@ struct SelectionView2: View {
                 })
             }
             
+            Text(viewModel.query)
+                .font(.system(size: 40))
+                .fontWeight(.black)
+            
             HStack {
                 Button(action: { viewModel.onYes2() }, label: {
                     ZStack {
@@ -69,6 +70,7 @@ struct SelectionView2: View {
                             .font(.system(size: 30))
                             .foregroundColor(Color.white)
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                            
                     }
                 })
             }
