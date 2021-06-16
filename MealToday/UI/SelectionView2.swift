@@ -23,6 +23,7 @@ struct SelectionView2: View {
                             .font(.system(size: 30))
                             .foregroundColor(Color.white)
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                            .rotationEffect(Angle(degrees: 180))
                     }
                 })
 
@@ -37,6 +38,7 @@ struct SelectionView2: View {
                             .font(.system(size: 30))
                             .foregroundColor(Color.white)
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                            .rotationEffect(Angle(degrees: 180))
                     }
                 })
             }
