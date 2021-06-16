@@ -43,7 +43,7 @@ struct SelectionView2: View {
                 })
             }
 
-            Text(viewModel.query)
+            Text(viewModel.query == "디저트는 Yes 식사는 No" ? viewModel.query+"\n(디저트,식사는 일치)" : viewModel.query)
                 .font(.system(size: 40))
                 .fontWeight(.black)
 

@@ -7,7 +7,7 @@
 
 enum FoodType: String, Hashable, Model, CaseIterable, Codable {
 
-    case dessertOrMeal = "디저트 Or 식사"
+    case dessertOrMeal = "디저트는 Yes 식사는 No"
     // desserts
     case beverage = "음료"
     case bingsu = "빙수"
