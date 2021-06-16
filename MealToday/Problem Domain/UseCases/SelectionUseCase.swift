@@ -11,30 +11,30 @@ protocol SelectionUseCase: UseCase {
     mutating func addChoice(for foodType: FoodType, isChosen: Bool)
     mutating func getNextQuery() -> AnyPublisher<FoodType?, Never>
     mutating func setSelections(with selections: Selections)
-    
+
     // add setMode func
     mutating func setMode(with mode: Int)
-    
+
     mutating func reset()
     func getSelections() -> Selections
 }
 
 #if DEBUG
 struct StubSelectionUseCase: SelectionUseCase {
-    
+
     mutating func reset() {
         // add selectedMode var
         selectedMode = 1
-        
+
         selections = Selections()
         queries = [.dessertOrMeal]
     }
-    
+
     private var selectedMode: Int // mod
-    
+
     private var selections = Selections()
     private var queries: [FoodType] = [.dessertOrMeal]
-    
+
     // mod
     mutating func setMode(with mode: Int) {
         self.selectedMode = mode
@@ -80,7 +80,7 @@ class FoodSelectionUseCase: SelectionUseCase {
 
     init(repository: FoodRepository) {
         self.repository = repository
-        
+
         // set default mode to 1p
         self.selectedMode = 1
     }
@@ -106,7 +106,7 @@ class FoodSelectionUseCase: SelectionUseCase {
         guard let query = queries.popLast() else { return Just(nil).eraseToAnyPublisher() }
         return Just(query).eraseToAnyPublisher()
     }
-    
+
     // set mode (1p, 2p)
     func setMode(with mode: Int) {
         self.selectedMode = mode

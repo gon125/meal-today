@@ -14,7 +14,7 @@ extension SelectionView2 {
         @Published var foodType: FoodType = FoodType.dessertOrMeal
         @Injected private var selectionUseCase: SelectionUseCase
         @Injected private var appState: AppState
-        
+
         private var selectedA: Int = 0
         private var valueOfA: Int = 0
         private var selectedB: Int = 0
@@ -23,14 +23,14 @@ extension SelectionView2 {
         init() {
             getNextQuery()
         }
-        
+
         func selectionA(with selection: Int) {
-            if(selectedA == 0) {
+            if selectedA == 0 {
                 self.selectedA = selectedA + 1
                 self.valueOfA = selection
-                
-                if(self.selectedA == 1 && self.selectedB == 1) {
-                    if(valueOfB == 1 && valueOfA == 1) {
+
+                if self.selectedA == 1 && self.selectedB == 1 {
+                    if valueOfB == 1 && valueOfA == 1 {
                         selectionUseCase.addChoice(for: foodType, isChosen: true)
                     } else {
                         selectionUseCase.addChoice(for: foodType, isChosen: false)
@@ -40,14 +40,14 @@ extension SelectionView2 {
                 }
             }
         }
-        
+
         func selectionB(with selection: Int) {
-            if(selectedB == 0) {
+            if selectedB == 0 {
                 self.selectedB = selectedB + 1
                 self.valueOfB = selection
-                
-                if(self.selectedA == 1 && self.selectedB == 1) {
-                    if(valueOfB == 1 && valueOfA == 1) {
+
+                if self.selectedA == 1 && self.selectedB == 1 {
+                    if valueOfB == 1 && valueOfA == 1 {
                         selectionUseCase.addChoice(for: foodType, isChosen: true)
                     } else {
                         selectionUseCase.addChoice(for: foodType, isChosen: false)
@@ -57,7 +57,7 @@ extension SelectionView2 {
                 }
             }
         }
-        
+
         func resetSelectedValue() {
             self.selectedA = 0
             self.selectedB = 0
