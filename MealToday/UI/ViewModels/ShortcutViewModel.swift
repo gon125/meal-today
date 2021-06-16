@@ -19,12 +19,10 @@ extension ShortcutView {
         }
 
         func routeToSelectingView() {
-            selectionUseCase.setMode(with: 1)
-            appState.viewRouting = .selecting // set default to 2p
+            appState.viewRouting = .selecting
         }
 
         func routeToSelectingView2p() {
-            selectionUseCase.setMode(with: 2)
             appState.viewRouting = .selecting2p
         }
 

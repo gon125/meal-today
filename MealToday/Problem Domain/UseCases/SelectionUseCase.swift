@@ -11,35 +11,19 @@ protocol SelectionUseCase: UseCase {
     mutating func addChoice(for foodType: FoodType, isChosen: Bool)
     mutating func getNextQuery() -> AnyPublisher<FoodType?, Never>
     mutating func setSelections(with selections: Selections)
-
-    // add setMode func
-    mutating func setMode(with mode: Int)
-
     mutating func reset()
     func getSelections() -> Selections
 }
 
 #if DEBUG
 struct StubSelectionUseCase: SelectionUseCase {
-
     mutating func reset() {
-        // add selectedMode var
-        selectedMode = 1
-
         selections = Selections()
         queries = [.dessertOrMeal]
     }
 
-    private var selectedMode: Int // mod
-
     private var selections = Selections()
     private var queries: [FoodType] = [.dessertOrMeal]
-
-    // mod
-    mutating func setMode(with mode: Int) {
-        self.selectedMode = mode
-        print("struct// selected mode: " + String(mode) + "p")
-    }
 
     mutating func setSelections(with selections: Selections) {
         self.selections = selections
@@ -71,8 +55,6 @@ struct StubSelectionUseCase: SelectionUseCase {
 typealias DefaultSelectionUseCase = FoodSelectionUseCase
 
 class FoodSelectionUseCase: SelectionUseCase {
-
-    private var selectedMode: Int
     private var selections = Selections()
     private var queries: [FoodType] = [.dessertOrMeal]
     private let repository: FoodRepository
@@ -80,9 +62,6 @@ class FoodSelectionUseCase: SelectionUseCase {
 
     init(repository: FoodRepository) {
         self.repository = repository
-
-        // set default mode to 1p
-        self.selectedMode = 1
     }
 
     func getFoodFromSelection() -> AnyPublisher<Food?, Never> {
@@ -105,12 +84,6 @@ class FoodSelectionUseCase: SelectionUseCase {
     func getNextQuery() -> AnyPublisher<FoodType?, Never> {
         guard let query = queries.popLast() else { return Just(nil).eraseToAnyPublisher() }
         return Just(query).eraseToAnyPublisher()
-    }
-
-    // set mode (1p, 2p)
-    func setMode(with mode: Int) {
-        self.selectedMode = mode
-        print("class// selected mode: " + String(mode) + "p")
     }
 
     func setSelections(with selections: Selections) {
