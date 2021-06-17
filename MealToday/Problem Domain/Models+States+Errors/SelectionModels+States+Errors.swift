@@ -7,7 +7,7 @@
 
 enum FoodType: String, Hashable, Model, CaseIterable, Codable {
 
-    case dessertOrMeal = "디저트는 Yes 식사는 No"
+    case dessertOrMeal = "디저트는 Yes\n식사는 No"
     // desserts
     case beverage = "음료"
     case bingsu = "빙수"
@@ -29,11 +29,16 @@ enum FoodType: String, Hashable, Model, CaseIterable, Codable {
     static let meal: [FoodType] = [.meat, .seafood, .rice, .noodles, .soup, .fastfood, .friedFood]
 }
 
-typealias Selections = [FoodType: Bool]
+typealias Selections = [Selection]
+
+struct Selection: Model {
+    let foodType: FoodType
+    let isChosen: Bool
+}
 
 #if DEBUG
 extension Selections {
-    static let stub: Self = [.beverage: true, .bingsu: true, .bread: false, .icecream: true, .sweets: false, .cake: true]
+    static let stub: Self = [.init(foodType: .beverage, isChosen: true)]
 }
 #endif
 

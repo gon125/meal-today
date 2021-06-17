@@ -11,9 +11,10 @@ struct DefaultFoodRepository: FoodRepository {
     private let dbManager = DBManager()
 
     func getFood(from selections: Selections) -> AnyPublisher<[Food]?, Never> {
+        let keys = selections.filter({ $0.isChosen == true}).map { $0.foodType }
+        guard !keys.isEmpty else { return Just([]).eraseToAnyPublisher() }
         var query = ""
-
-        for key in selections.filter({ $0.value == true}).keys {
+        for key in keys {
             guard let tableName = key.tableName else { continue }
             query += "SELECT name FROM \(tableName) UNION "
         }

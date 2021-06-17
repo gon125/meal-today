@@ -10,6 +10,7 @@ protocol SelectionUseCase: UseCase {
     mutating func getFoodFromSelection() -> AnyPublisher<Food?, Never>
     mutating func addChoice(for foodType: FoodType, isChosen: Bool)
     mutating func getNextQuery() -> AnyPublisher<FoodType?, Never>
+    mutating func revertLastChoice()
     mutating func setSelections(with selections: Selections)
     mutating func reset()
     func getSelections() -> Selections
@@ -17,6 +18,10 @@ protocol SelectionUseCase: UseCase {
 
 #if DEBUG
 struct StubSelectionUseCase: SelectionUseCase {
+    mutating func revertLastChoice() {
+        //
+    }
+
     mutating func reset() {
         selections = Selections()
         queries = [.dessertOrMeal]
@@ -33,7 +38,7 @@ struct StubSelectionUseCase: SelectionUseCase {
         if foodType == .dessertOrMeal {
             queries += isChosen ? FoodType.dessert : FoodType.meal
         }
-        selections[foodType] = isChosen
+        selections.append(.init(foodType: foodType, isChosen: isChosen))
     }
 
     mutating func getNextQuery() -> AnyPublisher<FoodType?, Never> {
@@ -55,8 +60,10 @@ struct StubSelectionUseCase: SelectionUseCase {
 typealias DefaultSelectionUseCase = FoodSelectionUseCase
 
 class FoodSelectionUseCase: SelectionUseCase {
+
     private var selections = Selections()
     private var queries: [FoodType] = [.dessertOrMeal]
+    private var popedQueries: [FoodType] = []
     private let repository: FoodRepository
     var foods: LoopIterator<Food>?
 
@@ -77,12 +84,23 @@ class FoodSelectionUseCase: SelectionUseCase {
         if foodType == .dessertOrMeal {
             queries += isChosen ? FoodType.dessert : FoodType.meal
         } else {
-            selections[foodType] = isChosen
+            selections.append(.init(foodType: foodType, isChosen: isChosen))
+        }
+    }
+
+    func revertLastChoice() {
+        _ = selections.popLast()
+        if let poped = popedQueries.popLast() {
+            queries.append(poped)
+        }
+        if let poped = popedQueries.popLast() {
+            queries.append(poped)
         }
     }
 
     func getNextQuery() -> AnyPublisher<FoodType?, Never> {
         guard let query = queries.popLast() else { return Just(nil).eraseToAnyPublisher() }
+        popedQueries.append(query)
         return Just(query).eraseToAnyPublisher()
     }
 

@@ -50,7 +50,7 @@ class DefaultShortcutUseCase: ShortcutUseCase {
     }
 
     func addShortcut(name: String, selections: Selections, icon: String, color: CodableColor) {
-        var description = selections.filter { $0.value == true }.keys.reduce("", { $0 + $1.rawValue + ", "})
+        var description = selections.filter { $0.isChosen == true }.map { $0.foodType }.reduce("", { $0 + $1.rawValue + ", "})
         _ = description.popLast()
         _ = description.popLast()
         shortcutStore.addShortcut(
