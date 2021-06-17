@@ -1,31 +1,16 @@
 # 오늘 뭐 먹지? (Meal Today)
 선택하기 어려운 사람들을 위한 음식 🥘 선정 써-비스!
 
+# Demo
+https://www.youtube.com/watch?v=d9a7prXlW_Y
 
-## To Set Up
-run scripts/.project-setup.sh
-### What It Does
-1. Linking `.swiftLint.yml`
-2. Reassigning Git Hooks
-3. Add Useful Code Snippets to Xcode
-#### Git Hooks Contain
-1. pre-commit
+https://user-images.githubusercontent.com/20037035/122433715-700dd000-cfd1-11eb-89f4-7f96bee7f1b0.mp4
 
-- Protect main branch from commits.
-<img width="1195" alt="Screen Shot 2021-04-13 at 7 59 29 PM" src="https://user-images.githubusercontent.com/20037035/114542348-c50c2d80-9c92-11eb-9ef7-c283439c9084.png">
 
-- Enfoce SwiftLint for commiting files.
-<img width="1195" alt="Screen Shot 2021-04-13 at 8 16 03 PM" src="https://user-images.githubusercontent.com/20037035/114544143-3056ff00-9c95-11eb-9dd0-df95747f4867.png">
 
-2. prepare-commit-msg
 
-* Add `[#issue-number-of-branch]` in front of every commit msg. 
-<br/>*** your branch name should be like `'issueNum-work-you've-done'`
-<img width="1195" alt="Screen Shot 2021-04-13 at 8 20 16 PM" src="https://user-images.githubusercontent.com/20037035/114544696-ef131f00-9c95-11eb-9e7e-7e207d34fdfb.png">
+# Screen Shots
 
-#### Useful Code Snippets
-- Preview for UIKit ViewController
-<img width="754" alt="Screen Shot 2021-04-13 at 8 27 09 PM" src="https://user-images.githubusercontent.com/20037035/114545241-af990280-9c96-11eb-81bb-42655db35ede.png">
-
-  
- 
+<img width="477" alt="Screen Shot 2021-06-18 at 1 05 15 AM" src="https://user-images.githubusercontent.com/20037035/122433489-3fc63180-cfd1-11eb-8985-1ae651bbb403.png">
+<img width="507" alt="Screen Shot 2021-06-18 at 1 05 29 AM" src="https://user-images.githubusercontent.com/20037035/122433531-4785d600-cfd1-11eb-8e9f-2c40072f54d0.png">
+<img width="446" alt="Screen Shot 2021-06-18 at 1 05 48 AM" src="https://user-images.githubusercontent.com/20037035/122433571-52d90180-cfd1-11eb-85d9-119399d0c051.png">
