@@ -12,7 +12,7 @@ struct ResultView: View {
     @State var showingAlert = false
 
     var body: some View {
-        VStack(spacing: 10) {
+        VStack(alignment: .center, spacing: 10) {
             HStack {
                 Spacer()
                 // [NEED] route to ShortcutView
@@ -29,17 +29,17 @@ struct ResultView: View {
             Spacer()
                 .frame(maxHeight: 65)
 
-            ZStack {
+            ZStack(alignment: .center) {
                 Circle()
                     .fill(Color.yellow)
-                    .frame(width: 300, height: 300, alignment: .center/*@END_MENU_TOKEN@*/)
                     .shadow(radius: 10/*@END_MENU_TOKEN@*/)
+                    .scaledToFill()
                 VStack(spacing: 0) {
                     Spacer().frame(height: 0)
                     Text("오늘 추천 메뉴는")
                         .font(.system(size: 35))
                         .fontWeight(.medium)
-                    Text(viewModel.foodName)
+                    Text(changeLine(resultFood: viewModel.foodName))
                         .font(.system(size: 60))
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
@@ -47,8 +47,10 @@ struct ResultView: View {
                         .shadow(radius: 10/*@END_MENU_TOKEN@*/)
 
                 }
+                .minimumScaleFactor(0.1)
+                .padding(30)
             }
-            .padding(.bottom, 30)
+            .padding(30)
             Text("메뉴가 마음에 드시나요?")
                 .font(.title)
                 .padding(.bottom, 5)
@@ -175,4 +177,20 @@ struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
         ResultView()
     }
+}
+
+// 어디에 넣을지 몰라서 일단 여기에 둡니다....
+func changeLine(resultFood: String) -> String {
+    var loc = 0
+    var rr = resultFood
+    if let rangeR = rr.range(of: " ") {
+        loc = rr.distance(from: rr.startIndex, to: rangeR.lowerBound)
+    }
+
+    if loc == 0 {
+            return resultFood
+    }
+    let i = rr.index(rr.startIndex, offsetBy: loc)
+    rr.insert("\n", at: i)
+    return rr
 }

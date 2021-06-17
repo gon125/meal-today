@@ -48,20 +48,32 @@ struct ShortcutView: View {
                 .listStyle(SidebarListStyle())
 
             }
-
-            Button(action: { viewModel.routeToSelectingView() }, label: {
-                Circle()
-                    .foregroundColor(Color.yellow)
-                    .frame(width: 60, height: 60)
-                    .overlay(
-                        Image(systemName: "plus")
-                            .font(.system(size: 30))
-                            .foregroundColor(.white)
-                    )
-                    .padding(10)
-                    .shadow(radius: 20)
-            })
-
+            VStack {
+                Button(action: { viewModel.routeToSelectingView2p() }, label: {
+                    Circle()
+                        .foregroundColor(Color.yellow)
+                        .frame(width: 60, height: 60)
+                        .overlay(
+                            Image(systemName: "person.2")
+                                .font(.system(size: 30))
+                                .foregroundColor(.white)
+                        )
+                        .padding(10)
+                        .shadow(radius: 20)
+                })
+                Button(action: { viewModel.routeToSelectingView() }, label: {
+                    Circle()
+                        .foregroundColor(Color.yellow)
+                        .frame(width: 60, height: 60)
+                        .overlay(
+                            Image(systemName: "plus")
+                                .font(.system(size: 30))
+                                .foregroundColor(.white)
+                        )
+                        .padding(10)
+                        .shadow(radius: 20)
+                })
+            }
         }
     }
 }

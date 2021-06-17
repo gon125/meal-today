@@ -22,6 +22,10 @@ extension ShortcutView {
             appState.viewRouting = .selecting
         }
 
+        func routeToSelectingView2p() {
+            appState.viewRouting = .selecting2p
+        }
+
         func routeToResultView(with shortcut: Shortcut) {
             selectionUseCase.setSelections(with: shortcut.selections)
             appState.viewRouting = .resultView
