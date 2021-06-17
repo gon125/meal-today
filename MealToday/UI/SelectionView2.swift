@@ -13,7 +13,7 @@ struct SelectionView2: View {
 
     var body: some View {
         VStack {
-            if (dessertOrMeal == true) {
+            if dessertOrMeal == true {
                 HStack {
                     Button(action: { viewModel.onYes(); setState() }, label: {
                         ZStack {
@@ -26,11 +26,11 @@ struct SelectionView2: View {
                                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                         }
                     })
-                    
-                    Spacer().frame(height:100)
+
+                    Spacer().frame(height: 100)
                     Divider().frame(height: 180).padding(.horizontal, 20)
-                    Spacer().frame(height:100)
-                    
+                    Spacer().frame(height: 100)
+
                     Button(action: { viewModel.onNo(); setState() }, label: {
                         ZStack {
                             Circle()
@@ -73,14 +73,14 @@ struct SelectionView2: View {
                         }
                     })
                 }
-                
+
                 Text(viewModel.query)
                     .font(.system(size: 40))
                     .fontWeight(.black)
                     .rotationEffect(Angle(degrees: 180))
 
                 Spacer().frame(height: 100)
-                
+
                 Text(viewModel.query)
                     .font(.system(size: 40))
                     .fontWeight(.black)
@@ -116,7 +116,7 @@ struct SelectionView2: View {
             }
         }
     }
-    
+
     func setState() {
         self.dessertOrMeal = false
     }
