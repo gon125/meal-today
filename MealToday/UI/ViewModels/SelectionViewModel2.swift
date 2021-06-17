@@ -57,7 +57,7 @@ extension SelectionView2 {
                 }
             }
         }
-        
+
         func onYes() {
             selectionUseCase.addChoice(for: foodType, isChosen: true)
             getNextQuery()
