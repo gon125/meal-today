@@ -15,6 +15,7 @@ struct SelectionView: View {
             Text(viewModel.query)
                 .font(.system(size: 40))
                 .fontWeight(.black)
+                .multilineTextAlignment(.center)
             HStack {
                 Button(action: { viewModel.onYes() }, label: {
                     ZStack {
