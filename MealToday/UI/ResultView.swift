@@ -12,7 +12,7 @@ struct ResultView: View {
     @State var showingAlert = false
 
     var body: some View {
-        VStack(spacing: 10) {
+        VStack(alignment: .center, spacing: 10) {
             HStack {
                 Spacer()
                 // [NEED] route to ShortcutView
@@ -29,11 +29,11 @@ struct ResultView: View {
             Spacer()
                 .frame(maxHeight: 65)
 
-            ZStack {
+            ZStack(alignment: .center) {
                 Circle()
                     .fill(Color.yellow)
-                    .frame(width: 300, height: 300, alignment: .center/*@END_MENU_TOKEN@*/)
                     .shadow(radius: 10/*@END_MENU_TOKEN@*/)
+                    .scaledToFill()
                 VStack(spacing: 0) {
                     Spacer().frame(height: 0)
                     Text("오늘 추천 메뉴는")
@@ -47,8 +47,10 @@ struct ResultView: View {
                         .shadow(radius: 10/*@END_MENU_TOKEN@*/)
 
                 }
+                .minimumScaleFactor(0.1)
+                .padding(30)
             }
-            .padding(.bottom, 30)
+            .padding(30)
             Text("메뉴가 마음에 드시나요?")
                 .font(.title)
                 .padding(.bottom, 5)
