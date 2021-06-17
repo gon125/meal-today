@@ -9,43 +9,69 @@ import SwiftUI
 
 struct SelectionView: View {
     @ObservedObject var viewModel: ViewModel = ViewModel()
-
+    @State var dessertOrMeal = true
+    
     var body: some View {
         VStack {
-            Text(viewModel.query)
-                .font(.system(size: 40))
-                .fontWeight(.black)
-                .multilineTextAlignment(.center)
+            if(dessertOrMeal == true) {
+                Text("디저트 OR 식사")
+                    .font(.system(size: 40))
+                    .fontWeight(.black)
+                    .multilineTextAlignment(.center)
+            } else {
+                Text(viewModel.query)
+                    .font(.system(size: 40))
+                    .fontWeight(.black)
+                    .multilineTextAlignment(.center)
+            }
             HStack {
-                Button(action: { viewModel.onYes() }, label: {
+                Button(action: { viewModel.onYes(); setState() }, label: {
                     ZStack {
 
                         Circle()
                             .fill(Color.blue)
                             .frame(width: 130, height: 130)
-                        Text("YES")
-                            .font(.system(size: 30))
-                            .foregroundColor(Color.white)
-                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        if(dessertOrMeal == true) {
+                            Text("디저트")
+                                .font(.system(size: 30))
+                                .foregroundColor(Color.white)
+                                .fontWeight(.bold)
+                        } else {
+                            Text("YES")
+                                .font(.system(size: 30))
+                                .foregroundColor(Color.white)
+                                .fontWeight(.bold)
+                        }
                     }
                 })
 
                 Divider().frame(height: 180).padding(.horizontal, 20)
 
-                Button(action: { viewModel.onNo() }, label: {
+                Button(action: { viewModel.onNo(); setState() }, label: {
                     ZStack {
                         Circle()
                             .fill(Color.orange)
                             .frame(width: 130, height: 130)
-                        Text("No")
-                            .font(.system(size: 30))
-                            .foregroundColor(Color.white)
-                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        if(dessertOrMeal == true) {
+                            Text("식사")
+                                .font(.system(size: 30))
+                                .foregroundColor(Color.white)
+                                .fontWeight(.bold)
+                        } else {
+                            Text("NO")
+                                .font(.system(size: 30))
+                                .foregroundColor(Color.white)
+                                .fontWeight(.bold)
+                        }
                     }
                 })
 
             }
         }
+    }
+    
+    func setState() {
+        self.dessertOrMeal = false
     }
 }
 
