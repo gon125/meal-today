@@ -45,12 +45,12 @@ struct SelectionView2: View {
                 }.rotationEffect(Angle(degrees: 90))
             } else {
                 HStack {
-                    Button(action: { viewModel.selectionA(with: 1) }, label: {
+                    Button(action: { viewModel.selectionA(with: 0) }, label: {
                         ZStack {
                             Circle()
-                                .fill(Color.blue)
+                                .fill(Color.orange)
                                 .frame(width: 130, height: 130)
-                            Text("YES")
+                            Text("No")
                                 .font(.system(size: 30))
                                 .foregroundColor(Color.white)
                                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -60,12 +60,12 @@ struct SelectionView2: View {
 
                     Divider().frame(height: 180).padding(.horizontal, 20)
 
-                    Button(action: { viewModel.selectionA(with: 0) }, label: {
+                    Button(action: { viewModel.selectionA(with: 1) }, label: {
                         ZStack {
                             Circle()
-                                .fill(Color.orange)
+                                .fill(Color.blue)
                                 .frame(width: 130, height: 130)
-                            Text("No")
+                            Text("YES")
                                 .font(.system(size: 30))
                                 .foregroundColor(Color.white)
                                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -124,6 +124,6 @@ struct SelectionView2: View {
 
 struct SelectionView2_Previews: PreviewProvider {
     static var previews: some View {
-        SelectionView2()
+        SelectionView2(dessertOrMeal: false)
     }
 }
